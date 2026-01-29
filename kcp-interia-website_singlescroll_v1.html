@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCP Interia | Making Homes. Making Dreams.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --peacock: #1e3a8a;
+            --peacock-light: #3b82f6;
+            --gold: #d4af37;
+            --gold-light: #f4d03f;
+            --lotus: #db7093;
+            --lotus-light: #ffb6c1;
+            --ivory: #faf9f6;
+            --ivory-dark: #f0ede5;
+            --foreground: #1a1a1a;
+            --muted: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #faf9f6 0%, #f0ede5 100%);
+            color: var(--foreground);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--peacock);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--foreground);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--peacock);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--peacock);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: 20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            left: 20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(30, 58, 138, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite 2s;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            padding: 4rem;
+            border-radius: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(30, 58, 138, 0.1);
+            color: var(--peacock);
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--foreground);
+        }
+        
+        .hero h1 .highlight {
+            color: var(--peacock);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--peacock);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--peacock-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--foreground);
+            border: 2px solid var(--ivory-dark);
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .trust-indicators {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        
+        .dot-gold { background: var(--gold); }
+        .dot-peacock { background: var(--peacock); }
+        .dot-lotus { background: var(--lotus); }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header .highlight {
+            color: var(--peacock);
+        }
+        
+        .section-header p {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+        
+        /* Trust Cards */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+            height: 250px;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .flip-card-back {
+            background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(30, 58, 138, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .flip-card-front h3 {
+            font-size: 2rem;
+            color: var(--foreground);
+        }
+        
+        .flip-card-back p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        /* Projects Grid */
+        .projects-filter {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--ivory-dark);
+            background: white;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--peacock);
+            color: white;
+            border-color: var(--peacock);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--muted);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image::after {
+            content: 'Add Your Image';
+            position: absolute;
+            font-size: 1rem;
+            color: var(--muted);
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            color: white;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(30, 58, 138, 0.1);
+            color: var(--peacock);
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        
+        .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%);
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .service-card li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--muted);
+        }
+        
+        .service-card li::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        /* Process Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--peacock), var(--gold));
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .timeline-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            z-index: 10;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--peacock);
+        }
+        
+        /* Testimonials */
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--foreground);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--peacock);
+            margin-bottom: 0.25rem;
+        }
+        
+        .testimonial-project {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(30, 58, 138, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--peacock);
+            font-size: 1.5rem;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--foreground);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--ivory-dark);
+            border-radius: 0.75rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--peacock);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--foreground) 0%, #2d2d2d 100%);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 999;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-content {
+                padding: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 0;
+            }
+            
+            .timeline-item {
+                flex-direction: column !important;
+            }
+            
+            .timeline-content {
+                width: 100%;
+                margin-left: 4rem;
+            }
+            
+            .timeline-number {
+                left: 0;
+                transform: none;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">KCP Interia</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">Premium Interior Design</span>
+            <h1>Making Homes. <span class="highlight">Making Dreams.</span></h1>
+            <p>10+ years of crafting homes, studios, offices & soulful spaces. Where every design tells a story and every space feels like home.</p>
+            
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn btn-primary">
+                    View Our Work →
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    📅 Book a Consultation
+                </a>
+            </div>
+            
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span class="dot dot-gold"></span>
+                    Trusted by 100+ families
+                </div>
+                <div class="trust-item">
+                    <span class="dot dot-peacock"></span>
+                    End-to-end delivery
+                </div>
+                <div class="trust-item">
+                    <span class="dot dot-lotus"></span>
+                    Client-first approach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Cards -->
+    <section>
+        <div class="section-header">
+            <h2>Why Choose <span class="highlight">KCP Interia</span></h2>
+            <p>Hover over each card to discover what makes us different</p>
+        </div>
+        
+        <div class="trust-grid">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">⏱️</div>
+                        <h3>10+ Years</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>A decade of trust, craft, and lived-in design excellence</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">🏡</div>
+                        <h3>100+ Projects</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Homes, offices, studios, farmhouses & more - we've done it all</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">🔧</div>
+                        <h3>End-to-End</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>From concept to keys-in-hand delivery - we manage everything</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">💛</div>
+                        <h3>Client-First</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Every design begins with listening to your dreams</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <div class="section-header">
+            <h2>Our <span class="highlight">Portfolio</span></h2>
+            <p>Explore our diverse range of completed projects</p>
+        </div>
+        
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="homes">Residential Homes</button>
+            <button class="filter-btn" data-filter="offices">Commercial Offices</button>
+            <button class="filter-btn" data-filter="farmhouses">Farmhouses & Villas</button>
+            <button class="filter-btn" data-filter="studios">Studios</button>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card" data-category="homes">
+                <div class="project-image">🏠</div>
+                <div class="project-info">
+                    <span class="project-category">Residential</span>
+                    <h3>Modern Family Home</h3>
+                    <div class="project-meta">
+                        <span>📍 Mumbai</span>
+                        <span>📐 3500 sq ft</span>
+                        <span>📅 2024</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="offices">
+                <div class="project-image">🏢</div>
+                <div class="project-info">
+                    <span class="project-category">Commercial</span>
+                    <h3>Tech Startup Office</h3>
+                    <div class="project-meta">
+                        <span>📍 Bangalore</span>
+                        <span>📐 5000 sq ft</span>
+                        <span>📅 2023</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="farmhouses">
+                <div class="project-image">🌄</div>
+                <div class="project-info">
+                    <span class="project-category">Luxury</span>
+                    <h3>Countryside Villa</h3>
+                    <div class="project-meta">
+                        <span>📍 Lonavala</span>
+                        <span>📐 8000 sq ft</span>
+                        <span>📅 2024</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="studios">
+                <div class="project-image">🎨</div>
+                <div class="project-info">
+                    <span class="project-category">Creative</span>
+                    <h3>Artist Studio</h3>
+                    <div class="project-meta">
+                        <span>📍 Pune</span>
+                        <span>📐 1200 sq ft</span>
+                        <span>📅 2023</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="homes">
+                <div class="project-image">🏘️</div>
+                <div class="project-info">
+                    <span class="project-category">Residential</span>
+                    <h3>Minimalist Apartment</h3>
+                    <div class="project-meta">
+                        <span>📍 Delhi</span>
+                        <span>📐 2000 sq ft</span>
+                        <span>📅 2024</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="offices">
+                <div class="project-image">💼</div>
+                <div class="project-info">
+                    <span class="project-category">Commercial</span>
+                    <h3>Corporate Headquarters</h3>
+                    <div class="project-meta">
+                        <span>📍 Hyderabad</span>
+                        <span>📐 12000 sq ft</span>
+                        <span>📅 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="section-header">
+            <h2>Our <span class="highlight">Services</span></h2>
+            <p>Comprehensive interior design solutions tailored to your needs</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Residential Design</h3>
+                <p>Transform your house into a dream home with personalized interior solutions.</p>
+                <ul>
+                    <li>Complete home makeovers</li>
+                    <li>Room-by-room design</li>
+                    <li>Modular kitchens & wardrobes</li>
+                    <li>Custom furniture design</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Spaces</h3>
+                <p>Create inspiring workspaces that boost productivity and reflect your brand.</p>
+                <ul>
+                    <li>Office interior design</li>
+                    <li>Retail space planning</li>
+                    <li>Restaurant & café design</li>
+                    <li>Co-working spaces</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Renovation & Remodeling</h3>
+                <p>Breathe new life into existing spaces with thoughtful redesign.</p>
+                <ul>
+                    <li>Space optimization</li>
+                    <li>Modernization of old homes</li>
+                    <li>Structural modifications</li>
+                    <li>Heritage restoration</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">📐</div>
+                <h3>Space Planning</h3>
+                <p>Maximize functionality with intelligent layout and flow design.</p>
+                <ul>
+                    <li>3D visualization</li>
+                    <li>Floor plan optimization</li>
+                    <li>Lighting design</li>
+                    <li>Material selection</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>Consultation</h3>
+                <p>Expert guidance for your design decisions and project planning.</p>
+                <ul>
+                    <li>Design direction</li>
+                    <li>Budget planning</li>
+                    <li>Material sourcing</li>
+                    <li>Vendor coordination</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Project Management</h3>
+                <p>End-to-end execution with timely delivery and quality assurance.</p>
+                <ul>
+                    <li>Timeline management</li>
+                    <li>Quality control</li>
+                    <li>Vendor management</li>
+                    <li>Post-completion support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process">
+        <div class="section-header">
+            <h2>Our <span class="highlight">Process</span></h2>
+            <p>From dream to reality in 5 simple steps</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <h3>Consultation</h3>
+                    <p>We start by understanding your vision, lifestyle, and requirements. Share your dreams, and we'll listen carefully to create a personalized brief.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <h3>Concept Design</h3>
+                    <p>Our team creates initial design concepts with mood boards, 3D visualizations, and material palettes that bring your vision to life.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <h3>Design Development</h3>
+                    <p>We refine the chosen concept with detailed drawings, specifications, and realistic 3D renderings. Every detail is planned meticulously.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                    <h3>Execution</h3>
+                    <p>Our skilled team brings the design to life with quality craftsmanship, coordinated vendors, and regular progress updates.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <div class="timeline-content">
+                    <h3>Handover</h3>
+                    <p>We deliver your completed space with final styling, documentation, and continued support to ensure your complete satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="section-header">
+            <h2>Client <span class="highlight">Stories</span></h2>
+            <p>Hear from families who trusted us with their dreams</p>
+        </div>
+        
+        <div class="testimonials-slider">
+            <div class="testimonial">
+                <div class="testimonial-avatar">RS</div>
+                <p class="testimonial-text">"KCP Interia transformed our house into a home that truly reflects our family. Their attention to detail and understanding of our needs was exceptional. Highly recommended!"</p>
+                <div class="testimonial-author">Rajesh & Sneha Sharma</div>
+                <div class="testimonial-project">Modern Family Home, Mumbai</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Let's Create <span class="highlight">Together</span></h2>
+            <p>Ready to transform your space? Get in touch with us today</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>Whether you're planning a complete home renovation or just need design consultation, we're here to help bring your vision to life.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            hello@kcpinteria.com
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            +91 98765 43210
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Office</strong><br>
+                            Mumbai, Maharashtra, India
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" required placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectType">Project Type</label>
+                    <select id="projectType">
+                        <option value="">Select project type</option>
+                        <option value="residential">Residential Home</option>
+                        <option value="commercial">Commercial Office</option>
+                        <option value="farmhouse">Farmhouse/Villa</option>
+                        <option value="studio">Studio</option>
+                        <option value="renovation">Renovation</option>
+                        <option value="consultation">Consultation Only</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Tell us about your project *</label>
+                    <textarea id="message" required placeholder="Share your vision, timeline, budget range, or any specific requirements..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>KCP Interia</h4>
+                <p>Making homes. Making dreams. 10+ years of crafting exceptional spaces with passion and precision.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Facebook">👍</a>
+                    <a href="#" aria-label="Pinterest">📌</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#services">Services</a>
+                <a href="#process">Our Process</a>
+                <a href="#testimonials">Testimonials</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#services">Residential Design</a>
+                <a href="#services">Commercial Spaces</a>
+                <a href="#services">Renovation</a>
+                <a href="#services">Space Planning</a>
+                <a href="#services">Consultation</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 hello@kcpinteria.com</p>
+                <p>📱 +91 98765 43210</p>
+                <p>📍 Mumbai, Maharashtra</p>
+                <p>🕒 Mon-Sat: 10 AM - 7 PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 KCP Interia. All rights reserved. | Designed with 💛 for dreamers</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919876543210?text=Hi%2C%20I'm%20interested%20in%20your%20interior%20design%20services" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Chat on WhatsApp">
+        💬
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+        
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.9)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                projectType: document.getElementById('projectType').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Here you would typically send this to a backend
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Thank you for your inquiry! We\'ll get back to you within 24 hours. 🎉');
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+            
