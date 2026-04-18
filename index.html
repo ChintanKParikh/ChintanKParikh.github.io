@@ -1258,12 +1258,12 @@
             <p>Each space tells a unique story. Here are some of our creations</p>
         </div>
         
-<div class="projects-filter">
+<!-- <div class="projects-filter">
     <button class="filter-btn active" data-filter="all">All Projects</button>
     <button class="filter-btn" data-filter="residential">Residential</button>
     <button class="filter-btn" data-filter="vacational">Vacational</button>
     <button class="filter-btn" data-filter="professional">Professional</button>
-</div> -->
+</div> --> -->
 
 <!-- <div class="projects-grid">
     <div class="project-card" data-category="residential" onclick="openGallery('residential')">
@@ -1292,236 +1292,229 @@
 </div> -->
 
 
+<!-- ---------------------------- -->
 
-
-
-
-
-
-
-
-    <!-- Portfolio -->
+<!-- Portfolio -->
 <section id="portfolio">
     <div class="section-header">
         <h2>Our <span class="highlight">Projects</span></h2>
         <p>Each space tells a unique story. Here are some of our creations</p>
     </div>
-    
-    <!-- Filters -->
-    <div class="projects-filter">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="residential">Residential</button>
-        <button class="filter-btn" data-filter="villas">Villas</button>
-        <button class="filter-btn" data-filter="hotels">Hotels</button>
-        <button class="filter-btn" data-filter="commercial">Commercial</button>
+
+    <!-- Video Section -->
+    <div style="margin-bottom: 5rem;">
+        <h3 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--peacock);">Our Work in Motion</h3>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 3rem; font-size: 1.1rem;">Experience our designs through video walkthroughs</p>
+        <div style="max-width: 900px; margin: 0 auto; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+            <video controls style="width: 100%; display: block;">
+                <source src="images/Videos/1.mp4" type="video/mp4">
+                Your browser does not support videos.
+            </video>
+        </div>
     </div>
 
-    <!-- Projects Grid -->
-    <div class="projects-grid">
+    <!-- Albums Section -->
+    <div style="margin-bottom: 4rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+            
+            <!-- Complete Spaces Album -->
+            <div class="album-stack" onclick="openAlbum('completeSpaces')">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--peacock); text-align: center;">Complete Spaces</h3>
+                <div class="album-preview">
+                    <img src="images/Projects/completespaces/1.jpg" class="album-img" style="z-index: 10;">
+                    <img src="images/Projects/completespaces/2.jpg" class="album-img" style="z-index: 9;">
+                    <img src="images/Projects/completespaces/3.jpg" class="album-img" style="z-index: 8;">
+                    <img src="images/Projects/completespaces/4.jpg" class="album-img" style="z-index: 7;">
+                    <img src="images/Projects/completespaces/5.jpg" class="album-img" style="z-index: 6;">
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: var(--muted); font-size: 0.95rem;">Click to explore full album →</p>
+            </div>
 
-        <div class="project-card" data-category="residential" onclick="openLightbox(0, 'residential')">
-            <div class="project-image">
-                <img src="images/Projects/Residential/1.jpg" alt="Residential Project">
+            <!-- Design Details Album -->
+            <div class="album-stack" onclick="openAlbum('designDetails')">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--peacock); text-align: center;">Design Details</h3>
+                <div class="album-preview">
+                    <img src="images/Projects/designdetails/1.jpg" class="album-img" style="z-index: 10;">
+                    <img src="images/Projects/designdetails/2.jpg" class="album-img" style="z-index: 9;">
+                    <img src="images/Projects/designdetails/3.jpg" class="album-img" style="z-index: 8;">
+                    <img src="images/Projects/designdetails/4.jpg" class="album-img" style="z-index: 7;">
+                    <img src="images/Projects/designdetails/5.jpg" class="album-img" style="z-index: 6;">
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: var(--muted); font-size: 0.95rem;">Click to explore full album →</p>
             </div>
-            <div class="project-info">
-                <span class="project-category">Residential</span>
-                <h3>Modern Home Interiors</h3>
-            </div>
+
         </div>
+    </div>
 
-        <div class="project-card" data-category="villas" onclick="openLightbox(0, 'villas')">
-            <div class="project-image">
-                <img src="images/Projects/Villas/1.jpg" alt="Villa Project">
-            </div>
-            <div class="project-info">
-                <span class="project-category">Villa</span>
-                <h3>Luxury Villa Design</h3>
-            </div>
-        </div>
-
-        <div class="project-card" data-category="hotels" onclick="openLightbox(0, 'hotels')">
-            <div class="project-image">
-                <img src="images/Projects/Hotels/1.jpg" alt="Hotel Project">
-            </div>
-            <div class="project-info">
-                <span class="project-category">Hospitality</span>
-                <h3>Boutique Hotel Design</h3>
-            </div>
-        </div>
-
-        <div class="project-card" data-category="commercial" onclick="openLightbox(0, 'commercial')">
-            <div class="project-image">
-                <img src="images/Projects/Commercial/1.jpg" alt="Commercial Project">
-            </div>
-            <div class="project-info">
-                <span class="project-category">Commercial</span>
-                <h3>Office & Retail Spaces</h3>
-            </div>
-        </div>
-
+    <!-- View More -->
+    <div style="text-align: center; padding: 3rem; background: rgba(255,255,255,0.6); border-radius: 1.5rem; max-width: 600px; margin: 0 auto;">
+        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--muted);">Explore more of our projects, walkthroughs, and behind the scenes work</p>
+        <a href="YOUR_GOOGLE_DRIVE_LINK" target="_blank" class="btn btn-primary">View More Projects →</a>
     </div>
 </section>
 
-<!-- Lightbox -->
-<div class="lightbox" id="galleryModal">
-    <button class="lightbox-close" onclick="closeGallery()">×</button>
-    <button class="lightbox-nav lightbox-prev" onclick="changeGalleryImage(-1)">‹</button>
-
-    <div class="lightbox-content">
-        <img id="galleryImage" src="" alt="Project Image">
+<!-- Album Grid Modal -->
+<div class="album-modal" id="albumModal">
+    <button class="gallery-close" onclick="closeAlbum()">×</button>
+    <div class="album-grid-container">
+        <h2 id="albumTitle" style="color: white; text-align: center; margin-bottom: 2rem; font-size: 2.5rem;"></h2>
+        <div class="album-grid" id="albumGrid"></div>
     </div>
-
-    <button class="lightbox-nav lightbox-next" onclick="changeGalleryImage(1)">›</button>
-
-    <div class="lightbox-counter" id="galleryCounter"></div>
-    <div class="lightbox-thumbnails" id="galleryThumbnails"></div>
 </div>
 
-<!-- Styles -->
 <style>
-.project-image img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 1rem 1rem 0 0;
-    transition: transform 0.4s ease;
+/* Album Stack Styles */
+.album-stack {
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.project-card:hover img {
+.album-stack:hover {
+    transform: translateY(-10px);
+}
+
+.album-preview {
+    position: relative;
+    height: 400px;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.album-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.album-img:nth-child(1) { transform: translateY(0) rotate(0deg); }
+.album-img:nth-child(2) { transform: translateY(-15px) rotate(-3deg); }
+.album-img:nth-child(3) { transform: translateY(-30px) rotate(2deg); }
+.album-img:nth-child(4) { transform: translateY(-45px) rotate(-2deg); }
+.album-img:nth-child(5) { transform: translateY(-60px) rotate(1deg); }
+
+.album-stack:hover .album-img:nth-child(1) { transform: translateY(0) rotate(0deg) scale(1.05); }
+.album-stack:hover .album-img:nth-child(2) { transform: translateY(-20px) rotate(-4deg); }
+.album-stack:hover .album-img:nth-child(3) { transform: translateY(-40px) rotate(3deg); }
+.album-stack:hover .album-img:nth-child(4) { transform: translateY(-60px) rotate(-3deg); }
+.album-stack:hover .album-img:nth-child(5) { transform: translateY(-80px) rotate(2deg); }
+
+/* Album Modal */
+.album-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    overflow-y: auto;
+    padding: 4rem 2rem;
+}
+
+.album-modal.active {
+    display: block;
+}
+
+.album-grid-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.album-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.album-grid img:hover {
     transform: scale(1.05);
 }
 
-.lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.9);
-    z-index: 9999;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox-content img {
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 1rem;
-}
-
-.lightbox-close,
-.lightbox-nav {
-    position: absolute;
-    background: none;
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.lightbox-close { top: 20px; right: 30px; }
-.lightbox-prev { left: 20px; }
-.lightbox-next { right: 20px; }
-
-.lightbox-counter {
-    color: white;
-    margin-top: 10px;
-}
-
-.lightbox-thumbnails {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.thumbnail {
-    width: 60px;
-    height: 40px;
-    object-fit: cover;
-    cursor: pointer;
-    opacity: 0.6;
-}
-
-.thumbnail.active {
-    opacity: 1;
-    border: 2px solid white;
+@media (max-width: 768px) {
+    .album-preview { height: 300px; }
+    .album-grid { grid-template-columns: 1fr; }
+    .album-grid img { height: 250px; }
 }
 </style>
 
-<!-- Script -->
 <script>
-const galleries = {
-    residential: [
-        'images/Projects/Residential/1.jpg',
-        'images/Projects/Residential/2.jpg',
-        'images/Projects/Residential/3.jpg',
-        'images/Projects/Residential/4.jpg'
+// Album data - ADD YOUR IMAGE PATHS HERE
+const albums = {
+    completeSpaces: [
+        'images/Projects/completespaces/1.jpg',
+        'images/Projects/completespaces/2.jpg',
+        'images/Projects/completespaces/3.jpg',
+        'images/Projects/completespaces/4.jpg',
+        'images/Projects/completespaces/5.jpg',
+        'images/Projects/completespaces/6.jpg',
+        'images/Projects/completespaces/7.jpg',
+        'images/Projects/completespaces/8.jpg',
+        'images/Projects/completespaces/9.jpg',
+        'images/Projects/completespaces/10.jpg'
+        // Add more images as needed
     ],
-    villas: [
-        'images/Projects/Villas/1.jpg',
-        'images/Projects/Villas/2.jpg',
-        'images/Projects/Villas/3.jpg'
-    ],
-    hotels: [
-        'images/Projects/Hotels/1.jpg',
-        'images/Projects/Hotels/2.jpg'
-    ],
-    commercial: [
-        'images/Projects/Commercial/1.jpg',
-        'images/Projects/Commercial/2.jpg'
+    designDetails: [
+        'images/Projects/designdetails/1.jpg',
+        'images/Projects/designdetails/2.jpg',
+        'images/Projects/designdetails/3.jpg',
+        'images/Projects/designdetails/4.jpg',
+        'images/Projects/designdetails/5.jpg',
+        'images/Projects/designdetails/6.jpg',
+        'images/Projects/designdetails/7.jpg',
+        'images/Projects/designdetails/8.jpg',
+        'images/Projects/designdetails/9.jpg',
+        'images/Projects/designdetails/10.jpg'
+        // Add more images as needed
     ]
 };
 
-let currentGallery = [];
-let currentIndex = 0;
-
-function openLightbox(index, category) {
-    currentGallery = galleries[category] || [];
-    currentIndex = index;
-    updateGallery();
-    document.getElementById('galleryModal').classList.add('active');
+function openAlbum(albumKey) {
+    const modal = document.getElementById('albumModal');
+    const grid = document.getElementById('albumGrid');
+    const title = document.getElementById('albumTitle');
+    
+    title.textContent = albumKey === 'completeSpaces' ? 'Complete Spaces' : 'Design Details';
+    
+    grid.innerHTML = '';
+    albums[albumKey].forEach(img => {
+        const imgEl = document.createElement('img');
+        imgEl.src = img;
+        imgEl.alt = 'Project Image';
+        grid.appendChild(imgEl);
+    });
+    
+    modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
-function closeGallery() {
-    document.getElementById('galleryModal').classList.remove('active');
+function closeAlbum() {
+    document.getElementById('albumModal').classList.remove('active');
     document.body.style.overflow = 'auto';
 }
 
-function changeGalleryImage(direction) {
-    currentIndex = (currentIndex + direction + currentGallery.length) % currentGallery.length;
-    updateGallery();
-}
-
-function updateGallery() {
-    document.getElementById('galleryImage').src = currentGallery[currentIndex];
-    document.getElementById('galleryCounter').textContent =
-        (currentIndex + 1) + ' / ' + currentGallery.length;
-
-    const container = document.getElementById('galleryThumbnails');
-    container.innerHTML = '';
-
-    currentGallery.forEach((img, idx) => {
-        const thumb = document.createElement('img');
-        thumb.src = img;
-        thumb.className = 'thumbnail' + (idx === currentIndex ? ' active' : '');
-        thumb.onclick = () => { currentIndex = idx; updateGallery(); };
-        container.appendChild(thumb);
-    });
-}
-
-// Close on ESC
+// Close on Escape
 document.addEventListener('keydown', e => {
-    if (document.getElementById('galleryModal').classList.contains('active')) {
-        if (e.key === 'Escape') closeGallery();
-        if (e.key === 'ArrowLeft') changeGalleryImage(-1);
-        if (e.key === 'ArrowRight') changeGalleryImage(1);
+    if (e.key === 'Escape' && document.getElementById('albumModal').classList.contains('active')) {
+        closeAlbum();
     }
 });
 </script>
+
+    <!-- ----------------------- -->
 
     <!-- Services -->
     <section id="services">
