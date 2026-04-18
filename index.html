@@ -1258,12 +1258,12 @@
             <p>Each space tells a unique story. Here are some of our creations</p>
         </div>
         
-<!-- <div class="projects-filter">
+<div class="projects-filter">
     <button class="filter-btn active" data-filter="all">All Projects</button>
     <button class="filter-btn" data-filter="residential">Residential</button>
     <button class="filter-btn" data-filter="vacational">Vacational</button>
     <button class="filter-btn" data-filter="professional">Professional</button>
-</div> -->
+</div>
 
 <!-- <div class="projects-grid">
     <div class="project-card" data-category="residential" onclick="openGallery('residential')">
@@ -1290,93 +1290,6 @@
         </div>
     </div>
 </div> -->
-
-<script>
-    // Loading Screen
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            document.getElementById('loadingScreen').classList.add('fade-out');
-            document.body.classList.remove('loading');
-            setTimeout(() => document.getElementById('loadingScreen').style.display = 'none', 800);
-        }, 2500);
-    });
-
-    // Gallery System
-    let currentGallery = [];
-    let currentIndex = 0;
-    
-    // Define your galleries - ADD YOUR IMAGES HERE
-    const galleries = {
-        homes: [
-            'images/Projects/Residential/1.jpg',
-            'images/Projects/Residential/2.jpg',
-            'images/Projects/Residential/3.jpg',
-            'images/Projects/Residential/4.jpg',
-            'images/Projects/Residential/5.jpg'
-            // Add more as needed
-        ],
-        villas: [
-            'images/Projects/Vacational/1.jpg',
-            'images/Projects/Vacational/2.jpg',
-            'images/Projects/Vacational/3.jpg'
-            // Add more
-        ],
-        hotels: [
-            'images/Projects/Professional/1.jpg',
-            'images/Projects/Professional/2.jpg'
-            // Add more
-        ],
-        commercial: [
-            'images/Projects/Professional/1.jpg',
-            'images/Projects/Professional/2.jpg'
-            // Add more
-        ]
-    };
-
-    function openLightbox(index, category) {
-        currentGallery = galleries[category] || [];
-        currentIndex = index;
-        updateGallery();
-        document.getElementById('galleryModal').classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeGallery() {
-        document.getElementById('galleryModal').classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-
-    function changeGalleryImage(direction) {
-        currentIndex = (currentIndex + direction + currentGallery.length) % currentGallery.length;
-        updateGallery();
-    }
-
-    function updateGallery() {
-        document.getElementById('galleryImage').src = currentGallery[currentIndex];
-        document.getElementById('galleryCounter').textContent = `${currentIndex + 1} / ${currentGallery.length}`;
-        
-        const thumbnailsContainer = document.getElementById('galleryThumbnails');
-        thumbnailsContainer.innerHTML = '';
-        currentGallery.forEach((img, idx) => {
-            const thumb = document.createElement('img');
-            thumb.src = img;
-            thumb.className = 'thumbnail' + (idx === currentIndex ? ' active' : '');
-            thumb.onclick = () => { currentIndex = idx; updateGallery(); };
-            thumbnailsContainer.appendChild(thumb);
-        });
-    }
-
-    document.addEventListener('keydown', e => {
-        if (document.getElementById('galleryModal').classList.contains('active')) {
-            if (e.key === 'Escape') closeGallery();
-            else if (e.key === 'ArrowLeft') changeGalleryImage(-1);
-            else if (e.key === 'ArrowRight') changeGalleryImage(1);
-        }
-    });
-
-    document.getElementById('galleryModal').addEventListener('click', e => {
-        if (e.target.id === 'galleryModal') closeGallery();
-    });
 
     <!-- Services -->
     <section id="services">
