@@ -1258,88 +1258,38 @@
             <p>Each space tells a unique story. Here are some of our creations</p>
         </div>
         
-        <div class="projects-filter">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="homes">Modern Apartments</button>
-            <button class="filter-btn" data-filter="villas">Luxury Villas</button>
-            <button class="filter-btn" data-filter="hotels">Stylish Hotels</button>
-            <button class="filter-btn" data-filter="commercial">Chic Commercial</button>
+<div class="projects-filter">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="residential">Residential</button>
+    <button class="filter-btn" data-filter="vacational">Vacational</button>
+    <button class="filter-btn" data-filter="professional">Professional</button>
+</div>
+
+<div class="projects-grid">
+    <div class="project-card" data-category="residential" onclick="openGallery('residential')">
+        <div class="project-image">View Gallery</div>
+        <div class="project-info">
+            <span class="project-category">Residential</span>
+            <h3>Residential Homes</h3>
         </div>
-        
-        <div class="projects-grid">
-            <div class="project-card" data-category="homes" onclick="openLightbox(0, 'homes')">
-                <div class="project-image">Gallery</div>
-                <div class="project-info">
-                    <span class="project-category">Modern Minimalist</span>
-                    <h3>Contemporary Family Apartment</h3>
-                    <div class="project-meta">
-                        <span>Hyderabad</span>
-                        <span>Clean and Stylish</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" data-category="villas" onclick="openLightbox(0, 'villas')">
-                <div class="project-image">Gallery</div>
-                <div class="project-info">
-                    <span class="project-category">Luxury Living</span>
-                    <h3>Elegant Spacious Villa</h3>
-                    <div class="project-meta">
-                        <span>Hyderabad</span>
-                        <span>Timeless Elegance</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" data-category="hotels" onclick="openLightbox(0, 'hotels')">
-                <div class="project-image">Gallery</div>
-                <div class="project-info">
-                    <span class="project-category">Hospitality</span>
-                    <h3>Boutique Hotel Experience</h3>
-                    <div class="project-meta">
-                        <span>Hyderabad</span>
-                        <span>Luxurious and Modern</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" data-category="commercial" onclick="openLightbox(0, 'commercial1')">
-                <div class="project-image">Gallery</div>
-                <div class="project-info">
-                    <span class="project-category">Retail</span>
-                    <h3>Trendy Commercial Space</h3>
-                    <div class="project-meta">
-                        <span>Hyderabad</span>
-                        <span>Customer Magnet</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" data-category="commercial" onclick="openLightbox(0, 'commercial2')">
-                <div class="project-image">Gallery</div>
-                <div class="project-info">
-                    <span class="project-category">Luxury</span>
-                    <h3>Exclusive High End Design</h3>
-                    <div class="project-meta">
-                        <span>Hyderabad</span>
-                        <span>Unmatched Elegance</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card" data-category="homes" onclick="openLightbox(0, 'homes2')">
-                <div class="project-image">Gallery</div>
-                <div class="project-info">
-                    <span class="project-category">Residential</span>
-                    <h3>Smart Space Solution</h3>
-                    <div class="project-meta">
-                        <span>Hyderabad</span>
-                        <span>Maximum Comfort</span>
-                    </div>
-                </div>
-            </div>
+    </div>
+    
+    <div class="project-card" data-category="vacational" onclick="openGallery('vacational')">
+        <div class="project-image">View Gallery</div>
+        <div class="project-info">
+            <span class="project-category">Vacational</span>
+            <h3>Vacation Homes</h3>
         </div>
-    </section>
+    </div>
+    
+    <div class="project-card" data-category="professional" onclick="openGallery('professional')">
+        <div class="project-image">View Gallery</div>
+        <div class="project-info">
+            <span class="project-category">Professional</span>
+            <h3>Commercial Spaces</h3>
+        </div>
+    </div>
+</div>
 
     <!-- Services -->
     <section id="services">
