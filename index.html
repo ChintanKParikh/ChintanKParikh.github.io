@@ -1388,67 +1388,50 @@ $('.video-slider').on('beforeChange', function(){
     </div>
 
     <!-- Albums Section -->
-    <div style="margin-bottom: 4rem;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
-            
-            <!-- Complete Spaces Album -->
-            <div class="album-stack" onclick="openAlbum('completeSpaces')">
-                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--peacock); text-align: center;">Complete Spaces</h3>
-                <div class="album-preview">
-                    <img src="images/Projects/completespaces/1.jpg" class="album-img" style="z-index: 10;">
-                    <img src="images/Projects/completespaces/2.jpg" class="album-img" style="z-index: 9;">
-                    <img src="images/Projects/completespaces/3.jpg" class="album-img" style="z-index: 8;">
-                    <img src="images/Projects/completespaces/4.jpg" class="album-img" style="z-index: 7;">
-                    <img src="images/Projects/completespaces/5.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/6.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/7.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/8.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/9.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/10.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/11.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/12.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/13.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/14.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/15.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/16.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/17.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/18.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/19.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/completespaces/20.jpg" class="album-img" style="z-index: 6;">
-                </div>
-                <p style="text-align: center; margin-top: 1rem; color: var(--muted); font-size: 0.95rem;">Click to explore full album →</p>
+    <div style="margin-bottom: 5rem; max-width: 900px; margin-inline: auto;">
+
+    <!-- ===== COMPLETE SPACES ===== -->
+    <div class="album-stack">
+        <h3 class="album-title">Complete Spaces</h3>
+
+        <a href="https://drive.google.com/drive/folders/1aY1aSosW7hEVSQ-nP-VGNFC_mCFZWFyw?usp=drive_link" target="_blank" class="album-preview">
+
+            <img src="images/Projects/completespaces/1_.jpg" class="album-img" style="z-index:6;">
+            <img src="images/Projects/completespaces/2.jpg" class="album-img" style="z-index:5;">
+            <img src="images/Projects/completespaces/3.jpg" class="album-img" style="z-index:4;">
+            <img src="images/Projects/completespaces/4.jpg" class="album-img" style="z-index:3;">
+            <img src="images/Projects/completespaces/5.jpg" class="album-img" style="z-index:2;">
+            <img src="images/Projects/completespaces/6.jpg" class="album-img" style="z-index:1;">
+
+            <div class="album-overlay">
+                Click here to explore more →
             </div>
 
-            <!-- Design Details Album -->
-            <div class="album-stack" onclick="openAlbum('designDetails')">
-                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--peacock); text-align: center;">Design Details</h3>
-                <div class="album-preview">
-                    <img src="images/Projects/designdetails/1.jpg" class="album-img" style="z-index: 10;">
-                    <img src="images/Projects/designdetails/2.jpg" class="album-img" style="z-index: 9;">
-                    <img src="images/Projects/designdetails/3.jpg" class="album-img" style="z-index: 8;">
-                    <img src="images/Projects/designdetails/4.jpg" class="album-img" style="z-index: 7;">
-                    <img src="images/Projects/designdetails/5.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/6.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/7.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/8.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/9.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/10.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/11.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/12.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/13.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/14.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/15.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/16.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/17.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/18.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/19.jpg" class="album-img" style="z-index: 6;">
-                    <img src="images/Projects/designdetails/20.jpg" class="album-img" style="z-index: 6;">
-                </div>
-                <p style="text-align: center; margin-top: 1rem; color: var(--muted); font-size: 0.95rem;">Click to explore full album →</p>
-            </div>
-
-        </div>
+        </a>
     </div>
+
+
+    <!-- ===== DESIGN DETAILS ===== -->
+    <div class="album-stack">
+        <h3 class="album-title">Design Details</h3>
+
+        <a href="https://drive.google.com/drive/folders/1lXF9hvV76J8NwpZ99OIEhHWIR7HCo8jO?usp=drive_link" target="_blank" class="album-preview">
+
+            <img src="images/Projects/designdetails/1.jpg" class="album-img" style="z-index:6;">
+            <img src="images/Projects/designdetails/2.jpg" class="album-img" style="z-index:5;">
+            <img src="images/Projects/designdetails/3.jpg" class="album-img" style="z-index:4;">
+            <img src="images/Projects/designdetails/4.jpg" class="album-img" style="z-index:3;">
+            <img src="images/Projects/designdetails/5.jpg" class="album-img" style="z-index:2;">
+            <img src="images/Projects/designdetails/6.jpg" class="album-img" style="z-index:1;">
+
+            <div class="album-overlay">
+                Click here to explore more →
+            </div>
+
+        </a>
+    </div>
+
+</div>
 
     <!-- View More -->
     <div style="text-align: center; padding: 3rem; background: rgba(255,255,255,0.6); border-radius: 1.5rem; max-width: 600px; margin: 0 auto;">
@@ -1457,166 +1440,6 @@ $('.video-slider').on('beforeChange', function(){
     </div>
 </section>
 
-<!-- Album Grid Modal -->
-<div class="album-modal" id="albumModal">
-    <button class="gallery-close" onclick="closeAlbum()">×</button>
-    <div class="album-grid-container">
-        <h2 id="albumTitle" style="color: white; text-align: center; margin-bottom: 2rem; font-size: 2.5rem;"></h2>
-        <div class="album-grid" id="albumGrid"></div>
-    </div>
-</div>
-
-<style>
-/* Album Stack Styles */
-.album-stack {
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.album-stack:hover {
-    transform: translateY(-10px);
-}
-
-.album-preview {
-    position: relative;
-    height: 400px;
-    margin: 0 auto;
-    max-width: 500px;
-}
-
-.album-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 1rem;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-}
-
-.album-img:nth-child(1) { transform: translateY(0) rotate(0deg); }
-.album-img:nth-child(2) { transform: translateY(-15px) rotate(-3deg); }
-.album-img:nth-child(3) { transform: translateY(-30px) rotate(2deg); }
-.album-img:nth-child(4) { transform: translateY(-45px) rotate(-2deg); }
-.album-img:nth-child(5) { transform: translateY(-60px) rotate(1deg); }
-
-.album-stack:hover .album-img:nth-child(1) { transform: translateY(0) rotate(0deg) scale(1.05); }
-.album-stack:hover .album-img:nth-child(2) { transform: translateY(-20px) rotate(-4deg); }
-.album-stack:hover .album-img:nth-child(3) { transform: translateY(-40px) rotate(3deg); }
-.album-stack:hover .album-img:nth-child(4) { transform: translateY(-60px) rotate(-3deg); }
-.album-stack:hover .album-img:nth-child(5) { transform: translateY(-80px) rotate(2deg); }
-
-/* Album Modal */
-.album-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 10000;
-    overflow-y: auto;
-    padding: 4rem 2rem;
-}
-
-.album-modal.active {
-    display: block;
-}
-
-.album-grid-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.album-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.album-grid img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.album-grid img:hover {
-    transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-    .album-preview { height: 300px; }
-    .album-grid { grid-template-columns: 1fr; }
-    .album-grid img { height: 250px; }
-}
-</style>
-
-<script>
-// Album data - ADD YOUR IMAGE PATHS HERE
-const albums = {
-    completeSpaces: [
-        'images/Projects/completespaces/1.jpg',
-        'images/Projects/completespaces/2.jpg',
-        'images/Projects/completespaces/3.jpg',
-        'images/Projects/completespaces/4.jpg',
-        'images/Projects/completespaces/5.jpg',
-        'images/Projects/completespaces/6.jpg',
-        'images/Projects/completespaces/7.jpg',
-        'images/Projects/completespaces/8.jpg',
-        'images/Projects/completespaces/9.jpg',
-        'images/Projects/completespaces/10.jpg'
-        // Add more images as needed
-    ],
-    designDetails: [
-        'images/Projects/designdetails/1.jpg',
-        'images/Projects/designdetails/2.jpg',
-        'images/Projects/designdetails/3.jpg',
-        'images/Projects/designdetails/4.jpg',
-        'images/Projects/designdetails/5.jpg',
-        'images/Projects/designdetails/6.jpg',
-        'images/Projects/designdetails/7.jpg',
-        'images/Projects/designdetails/8.jpg',
-        'images/Projects/designdetails/9.jpg',
-        'images/Projects/designdetails/10.jpg'
-        // Add more images as needed
-    ]
-};
-
-function openAlbum(albumKey) {
-    const modal = document.getElementById('albumModal');
-    const grid = document.getElementById('albumGrid');
-    const title = document.getElementById('albumTitle');
-    
-    title.textContent = albumKey === 'completeSpaces' ? 'Complete Spaces' : 'Design Details';
-    
-    grid.innerHTML = '';
-    albums[albumKey].forEach(img => {
-        const imgEl = document.createElement('img');
-        imgEl.src = img;
-        imgEl.alt = 'Project Image';
-        grid.appendChild(imgEl);
-    });
-    
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeAlbum() {
-    document.getElementById('albumModal').classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-// Close on Escape
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && document.getElementById('albumModal').classList.contains('active')) {
-        closeAlbum();
-    }
-});
-</script>
 
     <!-- ----------------------- -->
 
