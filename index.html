@@ -1302,22 +1302,88 @@
     </div>
 
     <!-- Video Section -->
-    <div style="margin-bottom: 5rem;">
-        <!-- <h3 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--peacock);">Our Work in Motion</h3>
-        <p style="text-align: center; color: var(--muted); margin-bottom: 3rem; font-size: 1.1rem;">Experience our designs through video walkthroughs</p> -->
-        <div style="max-width: 900px; margin: 0 auto; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+        <!-- Slick CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<div style="margin-bottom: 5rem;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        
+        <div class="video-slider">
+
+            <video controls>
+                <source src="Videos/1.mp4" type="video/mp4">
+            </video>
+
+            <video controls>
+                <source src="Videos/2.mp4" type="video/mp4">
+            </video>
+
+            <video controls>
+                <source src="Videos/3.mp4" type="video/mp4">
+            </video>
+
+            <video controls>
+                <source src="Videos/4.mp4" type="video/mp4">
+            </video>
+
+            <video controls>
+                <source src="Videos/5.mp4" type="video/mp4">
+            </video>
+
+            <video controls>
+                <source src="Videos/6.mp4" type="video/mp4">
+            </video>
+
+        </div>
+
+    </div>
+</div>
+
+<style>
+.video-slider video {
+    width: 100%;
+    border-radius: 1rem;
+    display: block;
+}
+</style>
+
+<!-- jQuery + Slick JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+$('.video-slider').slick({
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 400
+});
+
+// Pause videos when sliding
+$('.video-slider').on('beforeChange', function(){
+    document.querySelectorAll('video').forEach(v => v.pause());
+});
+</script>
+
+        
+
+        <!-- ---------Earlier a--------- -->
+            <!-- <div style="margin-bottom: 5rem;"> -->
+            <!-- <!-- <div style="max-width: 700px; margin: 0 auto; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);"> -->
+            <!-- <video controls autoplay muted loop playsinline 
+                   style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <source src="Videos/1.mp4" type="video/mp4">
+            </video> -->
+        <!-- </div> --> -->
+        <!-- ---------Earlier b--------- -->
+        <!-- <!-- <h3 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--peacock);">Our Work in Motion</h3> -->
+        <!-- <p style="text-align: center; color: var(--muted); margin-bottom: 3rem; font-size: 1.1rem;">Experience our designs through video walkthroughs</p> -->
+        <!-- <div style="max-width: 900px; margin: 0 auto; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
             <video controls style="width: 100%; display: block;">
                 <source src="Videos/1.mp4" type="video/mp4">
                 Your browser does not support videos.
-            </video>
-        </div>
-        <!-- ---------Earlier--------- -->
-            <!-- <div style="max-width: 700px; margin: 0 auto; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
-            <video controls autoplay muted loop playsinline 
-                   style="width: 100%; height: 400px; object-fit: cover; display: block;">
-                <source src="Videos/1.mp4" type="video/mp4">
-            </video>
-        </div> -->
+            </video> -->
+        <!-- </div> --> -->
        <!-- ---------Earlier---------  -->
     </div>
 
