@@ -1301,147 +1301,105 @@
         <p>Each space tells a unique story. </p>
     </div>
 
-    <!-- Video Section -->
-        <!-- Slick CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- ===================== VIDEO SECTION ===================== -->
+<div style="max-width: 1000px; margin: 0 auto 5rem;">
 
-<div style="margin-bottom: 5rem;">
-    <div style="max-width: 900px; margin: 0 auto;">
-        
-        <div class="video-slider">
+    <h2 style="text-align:center; margin-bottom:2rem; color:var(--peacock);">
+        Videos
+    </h2>
 
-            <video controls>
-                <source src="Videos/1.mp4" type="video/mp4">
-            </video>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
 
-            <video controls>
-                <source src="Videos/2.mp4" type="video/mp4">
-            </video>
+        <video controls style="width:100%; border-radius:1rem;">
+            <source src="Videos/1.mp4" type="video/mp4">
+        </video>
 
-            <video controls>
-                <source src="Videos/3.mp4" type="video/mp4">
-            </video>
+        <video controls style="width:100%; border-radius:1rem;">
+            <source src="Videos/2.mp4" type="video/mp4">
+        </video>
 
-            <video controls>
-                <source src="Videos/4.mp4" type="video/mp4">
-            </video>
+        <video controls style="width:100%; border-radius:1rem;">
+            <source src="Videos/3.mp4" type="video/mp4">
+        </video>
 
-            <video controls>
-                <source src="Videos/5.mp4" type="video/mp4">
-            </video>
+        <video controls style="width:100%; border-radius:1rem;">
+            <source src="Videos/4.mp4" type="video/mp4">
+        </video>
 
-            <video controls>
-                <source src="Videos/6.mp4" type="video/mp4">
-            </video>
-
-        </div>
+        <video controls style="width:100%; border-radius:1rem;">
+            <source src="Videos/5.mp4" type="video/mp4">
+        </video>
 
     </div>
-</div>
 
-<style>
-.video-slider video {
-    width: 100%;
-    border-radius: 1rem;
-    display: block;
-}
-</style>
-
-<!-- jQuery + Slick JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-<script>
-$('.video-slider').slick({
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 400
-});
-
-// Pause videos when sliding
-$('.video-slider').on('beforeChange', function(){
-    document.querySelectorAll('video').forEach(v => v.pause());
-});
-</script>
-
-        
-
-        <!-- ---------Earlier a--------- -->
-            <!-- <div style="margin-bottom: 5rem;"> -->
-            <!-- <!-- <div style="max-width: 700px; margin: 0 auto; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);"> -->
-            <!-- <video controls autoplay muted loop playsinline 
-                   style="width: 100%; height: 400px; object-fit: cover; display: block;">
-                <source src="Videos/1.mp4" type="video/mp4">
-            </video> -->
-        <!-- </div> --> -->
-        <!-- ---------Earlier b--------- -->
-        <!-- <!-- <h3 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--peacock);">Our Work in Motion</h3> -->
-        <!-- <p style="text-align: center; color: var(--muted); margin-bottom: 3rem; font-size: 1.1rem;">Experience our designs through video walkthroughs</p> -->
-        <!-- <div style="max-width: 900px; margin: 0 auto; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
-            <video controls style="width: 100%; display: block;">
-                <source src="Videos/1.mp4" type="video/mp4">
-                Your browser does not support videos.
-            </video> -->
-        <!-- </div>  -->
-       <!-- ---------Earlier---------  -->
-    </div>
-
-    <!-- Albums Section -->
-    <div style="margin-bottom: 4rem;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
-        
-        <!-- Complete Spaces -->
-        <div class="album-stack">
-            <h3 class="album-title">Complete Spaces</h3>
-
-            <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_1" target="_blank" class="album-preview">
-                <img src="images/Projects/completespaces/1_.jpg" class="album-img" style="z-index:6;">
-                <img src="images/Projects/completespaces/2.jpg" class="album-img" style="z-index:5;">
-                <img src="images/Projects/completespaces/3.jpg" class="album-img" style="z-index:4;">
-                <img src="images/Projects/completespaces/4.jpg" class="album-img" style="z-index:3;">
-                <img src="images/Projects/completespaces/5.jpg" class="album-img" style="z-index:2;">
-                <img src="images/Projects/completespaces/6.jpg" class="album-img" style="z-index:1;">
-
-                <div class="album-overlay">
-                    Click here to explore more →
-                </div>
-            </a>
-        </div>
-
-        <!-- Design Details -->
-        <div class="album-stack">
-            <h3 class="album-title">Design Details</h3>
-
-            <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_2" target="_blank" class="album-preview">
-                <img src="images/Projects/designdetails/1.jpg" class="album-img" style="z-index:6;">
-                <img src="images/Projects/designdetails/2.jpg" class="album-img" style="z-index:5;">
-                <img src="images/Projects/designdetails/3.jpg" class="album-img" style="z-index:4;">
-                <img src="images/Projects/designdetails/4.jpg" class="album-img" style="z-index:3;">
-                <img src="images/Projects/designdetails/5.jpg" class="album-img" style="z-index:2;">
-                <img src="images/Projects/designdetails/6.jpg" class="album-img" style="z-index:1;">
-
-                <div class="album-overlay">
-                    Click here to explore more →
-                </div>
-            </a>
-        </div>
-
-    </div>
-</div>
-
-<!-- View More -->
-<div style="text-align: center; padding: 3rem; background: rgba(255,255,255,0.6); border-radius: 1.5rem; max-width: 600px; margin: 0 auto;">
-    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--muted);">
-        Explore more of our projects, walkthroughs, and behind the scenes work
+    <!-- Video Link -->
+    <p style="text-align:center; margin-top:1.5rem;">
+        <a href="https://drive.google.com/YOUR_VIDEO_FOLDER" target="_blank">
+            View more videos →
+        </a>
     </p>
-    <a href="https://drive.google.com/drive/folders/1_gUpGqzo4hJAAL2zuhqw37XaqAQ6tp0W?usp=drive_link" target="_blank" class="btn btn-primary">
-        View More Projects →
-    </a>
+
+</div>
+
+<!-- ===================== COMPLETE SPACES ===================== -->
+<div style="max-width: 1000px; margin: 0 auto 5rem;">
+
+    <h2 style="text-align:center; margin-bottom:2rem; color:var(--peacock);">
+        Complete Spaces
+    </h2>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+
+        <img src="images/Projects/completespaces/1_.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/completespaces/2.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/completespaces/3.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/completespaces/4.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/completespaces/5.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/completespaces/6.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/completespaces/7.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/completespaces/8.jpg" style="width:100%; border-radius:0.75rem;">
+
+    </div>
+
+    <!-- Link -->
+    <p style="text-align:center; margin-top:1.5rem;">
+        <a href="https://drive.google.com/YOUR_COMPLETE_SPACES_FOLDER" target="_blank">
+            Explore full album →
+        </a>
+    </p>
+
 </div>
 
 
-    <!-- ----------------------- -->
+<!-- ===================== DESIGN DETAILS ===================== -->
+<div style="max-width: 1000px; margin: 0 auto 5rem;">
+
+    <h2 style="text-align:center; margin-bottom:2rem; color:var(--peacock);">
+        Design Details
+    </h2>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+
+        <img src="images/Projects/designdetails/1.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/designdetails/2.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/designdetails/3.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/designdetails/4.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/designdetails/5.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/designdetails/6.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/designdetails/7.jpg" style="width:100%; border-radius:0.75rem;">
+        <img src="images/Projects/designdetails/8.jpg" style="width:100%; border-radius:0.75rem;">
+
+    </div>
+
+    <!-- Link -->
+    <p style="text-align:center; margin-top:1.5rem;">
+        <a href="https://drive.google.com/YOUR_DESIGN_DETAILS_FOLDER" target="_blank">
+            Explore full album →
+        </a>
+    </p>
+</div>
+
+<!-- ----------------------- -->
 
     <!-- Services -->
     <section id="services">
