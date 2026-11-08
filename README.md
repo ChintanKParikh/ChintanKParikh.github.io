@@ -38,23 +38,6 @@ images/Projects/...      project photos used in the Work galleries
 Videos/                  walkthrough videos
 ```
 
-Plain HTML, CSS and JavaScript, served by GitHub Pages. Nothing to install or build.
-
-## Making changes
-
-- **Text:** open the page file, change the sentence, save, and upload it to GitHub.
-- **Colours:** change the values under `:root` at the top of `assets/css/style.css`; they apply everywhere.
-- **Add a photo:** upload it to `images/Projects/completespaces/` or `images/Projects/designdetails/`, then in `work.html` copy one photo line in that gallery and change the file name and photo number. Photos of about 1600 px on the long side load fastest.
-- **Show a hidden video:** videos 2, 3 and 5 are hidden. In `work.html`, under "Our Work in Motion", remove the `<!--` and `-->` around the one you want.
-- **Animation speed:** edit the `TIMING` numbers at the top of `assets/js/site.js` (in milliseconds). To see the opening again while testing, open the site in a new tab or private window.
-- **Contact form:** messages go to the studio's Google Apps Script (the form's `action` address in `contact.html`). The feedback button links to the studio's Google Form.
-
-## Publishing an update
-
-1. On github.com, open this repository and choose **Add file → Upload files**.
-2. Drag in the changed files, keeping the same folder structure.
-3. Click **Commit changes**. The live site updates within a minute or two (refresh with Cmd + Shift + R or Ctrl + F5 if needed).
-
 ## Contact
 
 KCP Interia · 1-1-36/3, RTC X Road, Jawahar Nagar, Kavadiguda, Hyderabad 500 020
