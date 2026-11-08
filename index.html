@@ -1,1203 +1,103 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KCP Interia | Making Homes. Making Dreams.</title>
+    <title>KCP Interia | Interior Design Studio in Hyderabad</title>
+    <meta name="description" content="KCP Interia is an interior design studio in Hyderabad. Since 2008 we have designed and built homes, offices, hotels and showrooms.">
+    <meta name="theme-color" content="#025070">
 
-    <!-- Favicon -->
-    <link rel="icon" href="https://ChintanKParikh.github.io/images/signature.ico" type="image/x-icon">
-    <link rel="icon" href="https://ChintanKParikh.github.io/images/signature.png" type="image/png">
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
-        
-        :root {
-            --peacock: #1e3a8a;
-            --peacock-light: #3b82f6;
-            --gold: #d4af37;
-            --gold-light: #f4d03f;
-            --lotus: #db7093;
-            --lotus-light: #ffb6c1;
-            --ivory: #faf9f6;
-            --ivory-dark: #f0ede5;
-            --foreground: #1a1a1a;
-            --muted: #6b7280;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: linear-gradient(135deg, #faf9f6 0%, #f0ede5 100%);
-            color: var(--foreground);
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(250, 249, 246, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--peacock);
-            text-decoration: none;
-            letter-spacing: 2px;
-            text-align: center;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .nav-links a {
-            color: var(--foreground);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-            font-size: 1rem;
-        }
-        
-        .nav-links a:hover {
-            color: var(--peacock);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--peacock);
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8rem 2rem 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            right: 20%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: pulse 4s ease-in-out infinite;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 20%;
-            left: 20%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(30, 58, 138, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: pulse 4s ease-in-out infinite 2s;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            padding: 4rem;
-            border-radius: 2rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        }
-        
-        .badge {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(30, 58, 138, 0.1);
-            color: var(--peacock);
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.3;
-            margin-bottom: 1.5rem;
-            color: var(--foreground);
-            font-weight: 600;
-        }
-        
-        .hero h1 .highlight {
-            color: var(--peacock);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--muted);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-        
-        .btn-primary {
-            background: var(--peacock);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--peacock-light);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.9);
-            color: var(--foreground);
-            border: 2px solid var(--ivory-dark);
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .trust-indicators {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
-        
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-        
-        .dot-gold { background: var(--gold); }
-        .dot-peacock { background: var(--peacock); }
-        .dot-lotus { background: var(--lotus); }
-        
-        /* Section Styles */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-header h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-header .highlight {
-            color: var(--peacock);
-        }
-        
-        .section-header p {
-            color: var(--muted);
-            font-size: 1.1rem;
-        }
-        
-        /* Trust Cards */
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .flip-card {
-            perspective: 1000px;
-            height: 250px;
-        }
-        
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-        
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        }
-        
-        .flip-card-back {
-            background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%);
-            color: white;
-            transform: rotateY(180deg);
-        }
-        
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(30, 58, 138, 0.1);
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .flip-card-front h3 {
-            font-size: 2rem;
-            color: var(--foreground);
-        }
-        
-        .flip-card-back p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            text-align: center;
-        }
-        
-        /* Projects Grid */
-        .projects-filter {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--ivory-dark);
-            background: white;
-            border-radius: 2rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--peacock);
-            color: white;
-            border-color: var(--peacock);
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        /* Lightbox Styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .lightbox.active {
-            display: flex;
-        }
-        
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .lightbox-image {
-            max-width: 100%;
-            max-height: 85vh;
-            object-fit: contain;
-            border-radius: 1rem;
-        }
-        
-        .lightbox-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            z-index: 10000;
-        }
-        
-        .lightbox-close:hover {
-            background: var(--gold);
-            transform: scale(1.1);
-        }
-        
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .lightbox-nav:hover {
-            background: var(--gold);
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        .lightbox-prev {
-            left: 2rem;
-        }
-        
-        .lightbox-next {
-            right: 2rem;
-        }
-        
-        .lightbox-counter {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-weight: 600;
-        }
-        
-        .project-card {
-            position: relative;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-            background: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--muted);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-image::after {
-            content: 'Click to View Gallery';
-            position: absolute;
-            font-size: 1rem;
-            color: var(--muted);
-            font-family: 'DM Sans', sans-serif;
-        }
-        
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            display: flex;
-            align-items: flex-end;
-            padding: 2rem;
-            color: white;
-        }
-        
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-        
-        .project-info {
-            padding: 1.5rem;
-        }
-        
-        .project-category {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: rgba(30, 58, 138, 0.1);
-            color: var(--peacock);
-            border-radius: 1rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        
-        .project-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-meta {
-            display: flex;
-            gap: 1.5rem;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-        
-        .project-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-        
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-        }
-        
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%);
-            border-radius: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card p {
-            color: var(--muted);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .service-card li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--muted);
-        }
-        
-        .service-card li::before {
-            content: '✓';
-            color: var(--gold);
-            font-weight: bold;
-        }
-        
-        /* Process Timeline */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--peacock), var(--gold));
-        }
-        
-        .timeline-item {
-            display: flex;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-        
-        .timeline-content {
-            width: 45%;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            position: relative;
-        }
-        
-        .timeline-number {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.5rem;
-            z-index: 10;
-        }
-        
-        .timeline-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--peacock);
-        }
-        
-        /* Testimonials */
-        .testimonials-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .testimonial {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 3rem;
-            border-radius: 2rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .testimonial-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%);
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        
-        .testimonial-text {
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--foreground);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--peacock);
-            margin-bottom: 0.25rem;
-        }
-        
-        .testimonial-project {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-info p {
-            color: var(--muted);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(30, 58, 138, 0.1);
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--peacock);
-            font-size: 1.5rem;
-        }
-        
-        .contact-form {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--foreground);
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--ivory-dark);
-            border-radius: 0.75rem;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--peacock);
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, var(--foreground) 0%, #2d2d2d 100%);
-            color: white;
-            padding: 4rem 2rem 2rem;
-        }
-        
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-section h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-section a:hover {
-            color: var(--gold);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: var(--gold);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-        }
-        
-        /* WhatsApp Float Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 999;
-            text-decoration: none;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-content {
-                padding: 2rem;
-            }
-            
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .timeline::before {
-                left: 0;
-            }
-            
-            .timeline-item {
-                flex-direction: column !important;
-            }
-            
-            .timeline-content {
-                width: 100%;
-                margin-left: 4rem;
-            }
-            
-            .timeline-number {
-                left: 0;
-                transform: none;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- Browser tab icon and phone home-screen icon: the KCP Interia logo -->
+    <link rel="icon" href="images/signature.ico" sizes="any">
+    <link rel="icon" href="images/signature.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/signature.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+    /* Decides before the page appears whether to show the opening animation, the lamp or the doors. */
+    (function () { try {
+        var d = document.documentElement, s = sessionStorage, a = s.getItem('kcp-arrive');
+        s.removeItem('kcp-arrive');
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!s.getItem('kcp-seen')) d.classList.add('kcp-intro');
+        else if (a === 'doors') d.classList.add('kcp-arrive-doors');
+        else if (a === 'lamp') d.classList.add('kcp-arrive-lamp');
+    } catch (e) {} })();
+    </script>
 </head>
-<body>
-    <!-- Navigation -->
+<body class="page-home">
+    <!-- Opening animation, lamp and doors (controlled by assets/js/site.js) -->
+    <div class="kcp-loader" id="kcpLoader" aria-hidden="true">
+        <svg viewBox="0 0 1000 900" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><radialGradient id="kcpLampGlow"><stop offset="0" stop-color="#ffe9b0" stop-opacity=".95"/><stop offset=".45" stop-color="#ffe9b0" stop-opacity=".35"/><stop offset="1" stop-color="#ffe9b0" stop-opacity="0"/></radialGradient></defs><circle class="glow" cx="440" cy="650" r="190" fill="url(#kcpLampGlow)" opacity="0"/><path class="draw" pathLength="1" d="M168 288 L630 7" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M325 10 L947 588" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M168 288 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M30 855 H995" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M797 275 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M863 275 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M246 805 V715 A36 36 0 0 1 282 679 H322 A36 36 0 0 1 358 715 V805" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M246 740 A30 30 0 0 0 216 770 V790 A15 15 0 0 0 231 805 H373 A15 15 0 0 0 388 790 V770 A30 30 0 0 0 358 740" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M272 805 V855 M332 805 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" stroke="#79c8dc" stroke-width="6"/><path class="fillin" d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" fill="#79c8dc" opacity="0"/><path class="draw" pathLength="1" d="M118 485 H568" stroke="#87c49b" stroke-width="9"/><path class="draw" pathLength="1" d="M440 485 V548" stroke="#87c49b" stroke-width="6"/><path class="draw" pathLength="1" d="M426 568 A14 14 0 0 1 454 568" stroke="#87c49b" stroke-width="6"/><path class="draw" pathLength="1" d="M440 568 L486 622 H394 Z" stroke="#87c49b" stroke-width="6"/><g class="fillin" fill="#87c49b" opacity="0"><rect x="393" y="275" width="47" height="47"/><rect x="447" y="275" width="47" height="47"/><rect x="393" y="329" width="47" height="47"/><rect x="447" y="329" width="47" height="47"/></g><path class="fillin" d="M422 626 A18 18 0 0 0 458 626 Z" fill="#87c49b" opacity="0"/></svg>
+        <div class="kcp-loader-name"><span class="m"><span class="c">K</span></span><span class="m"><span class="c">C</span></span><span class="m"><span class="c">P</span></span><span class="m"><span class="c">&nbsp;</span></span><span class="m"><span class="c">I</span></span><span class="m"><span class="c">n</span></span><span class="m"><span class="c">t</span></span><span class="m"><span class="c">e</span></span><span class="m"><span class="c">r</span></span><span class="m"><span class="c">i</span></span><span class="m"><span class="c">a</span></span></div>
+        <div class="kcp-loader-tag">Bridging Vision to Reality</div>
+        <button class="kcp-skip" type="button">Skip</button>
+    </div>
+    <div class="kcp-dim" id="kcpDim" aria-hidden="true"></div>
+    <div class="kcp-lamp" id="kcpLamp" aria-hidden="true">
+        <svg viewBox="0 0 100 160"><line x1="50" y1="0" x2="50" y2="78" stroke="#87c49b" stroke-width="3"/><path d="M42 90 A8 8 0 0 1 58 90" stroke="#87c49b" stroke-width="3" fill="none"/><path d="M50 90 L76 122 H24 Z" stroke="#87c49b" stroke-width="3" fill="#025070" stroke-linejoin="round"/><circle class="halo" cx="50" cy="128" r="26" fill="#ffe9b0"/><path class="bulb" d="M40 124 A10 10 0 0 0 60 124 Z"/></svg>
+    </div>
+    <div class="kcp-door kcp-door-l" id="kcpDoorL" aria-hidden="true"><div class="kcp-pan kcp-pan-t"></div><div class="kcp-pan kcp-pan-b"></div><div class="kcp-handle"></div><div class="kcp-half kcp-crest"><svg viewBox="0 0 1000 900" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M168 288 L630 7" stroke="#79c8dc" stroke-width="16"/><path d="M325 10 L947 588" stroke="#79c8dc" stroke-width="16"/><path d="M168 288 V855" stroke="#79c8dc" stroke-width="16"/><path d="M30 855 H995" stroke="#79c8dc" stroke-width="16"/><path d="M797 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M863 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M246 805 V715 A36 36 0 0 1 282 679 H322 A36 36 0 0 1 358 715 V805" stroke="#79c8dc" stroke-width="16"/><path d="M246 740 A30 30 0 0 0 216 770 V790 A15 15 0 0 0 231 805 H373 A15 15 0 0 0 388 790 V770 A30 30 0 0 0 358 740" stroke="#79c8dc" stroke-width="16"/><path d="M272 805 V855 M332 805 V855" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" fill="#79c8dc"/><path d="M118 485 H568" stroke="#87c49b" stroke-width="24"/><path d="M440 485 V548" stroke="#87c49b" stroke-width="16"/><path d="M426 568 A14 14 0 0 1 454 568" stroke="#87c49b" stroke-width="16"/><path d="M440 568 L486 622 H394 Z" stroke="#87c49b" stroke-width="16"/><g fill="#87c49b"><rect x="393" y="275" width="47" height="47"/><rect x="447" y="275" width="47" height="47"/><rect x="393" y="329" width="47" height="47"/><rect x="447" y="329" width="47" height="47"/></g><path d="M422 626 A18 18 0 0 0 458 626 Z" fill="#87c49b"/></svg></div><div class="kcp-half kcp-doorname"><div><div class="w1">KCP INTERIA</div><div class="w2">Bridging Vision to Reality</div></div></div></div>
+    <div class="kcp-door kcp-door-r" id="kcpDoorR" aria-hidden="true"><div class="kcp-pan kcp-pan-t"></div><div class="kcp-pan kcp-pan-b"></div><div class="kcp-handle"></div><div class="kcp-half kcp-crest"><svg viewBox="0 0 1000 900" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M168 288 L630 7" stroke="#79c8dc" stroke-width="16"/><path d="M325 10 L947 588" stroke="#79c8dc" stroke-width="16"/><path d="M168 288 V855" stroke="#79c8dc" stroke-width="16"/><path d="M30 855 H995" stroke="#79c8dc" stroke-width="16"/><path d="M797 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M863 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M246 805 V715 A36 36 0 0 1 282 679 H322 A36 36 0 0 1 358 715 V805" stroke="#79c8dc" stroke-width="16"/><path d="M246 740 A30 30 0 0 0 216 770 V790 A15 15 0 0 0 231 805 H373 A15 15 0 0 0 388 790 V770 A30 30 0 0 0 358 740" stroke="#79c8dc" stroke-width="16"/><path d="M272 805 V855 M332 805 V855" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" fill="#79c8dc"/><path d="M118 485 H568" stroke="#87c49b" stroke-width="24"/><path d="M440 485 V548" stroke="#87c49b" stroke-width="16"/><path d="M426 568 A14 14 0 0 1 454 568" stroke="#87c49b" stroke-width="16"/><path d="M440 568 L486 622 H394 Z" stroke="#87c49b" stroke-width="16"/><g fill="#87c49b"><rect x="393" y="275" width="47" height="47"/><rect x="447" y="275" width="47" height="47"/><rect x="393" y="329" width="47" height="47"/><rect x="447" y="329" width="47" height="47"/></g><path d="M422 626 A18 18 0 0 0 458 626 Z" fill="#87c49b"/></svg></div><div class="kcp-half kcp-doorname"><div><div class="w1">KCP INTERIA</div><div class="w2">Bridging Vision to Reality</div></div></div></div>
+    <div class="kcp-seam" id="kcpSeam" aria-hidden="true"></div>
+
+    <!-- Top bar (same on every page) -->
     <nav>
         <div class="nav-container">
-            <a href="#home" class="logo">KCP INTERIA</a>
+            <a href="index.html" class="logo" aria-label="KCP Interia home"><img src="images/signature.png" alt=""><span>KCP INTERIA</span></a>
             <div class="tagline">Bridging Vision to Reality</div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <main id="main">
+<!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <span class="badge">Since 2008 | 300+ Projects Completed</span>
-            <h1>Transforming Spaces, <span class="highlight">Crafting Dreams</span></h1>
-            <p>Where your vision meets our passion. For over a decade, we have been turning houses into homes, offices into inspiring workspaces, and dreams into beautiful realities; one thoughtfully designed space at a time.</p>
+            <span class="badge">Since 2008 · 300+ projects</span>
+            <h1>Interiors designed <span class="highlight">around the way you live</span></h1>
+            <p>We are an interior design studio in Hyderabad. Since 2008 we have designed and built homes, offices, hotels and showrooms, working closely with each client from the first sketch to the day they move in.</p>
             
             <div class="cta-buttons">
-                <a href="#portfolio" class="btn btn-primary">
-                    Explore Our Work
+                <a href="work.html" class="btn btn-primary">
+                    See Our Work
                 </a>
-                <a href="#contact" class="btn btn-secondary">
-                    Let's Talk About Your Space
+                <a href="contact.html" class="btn btn-secondary">
+                    Talk to Us
                 </a>
             </div>
             
             <div class="trust-indicators">
                 <div class="trust-item">
                     <span class="dot dot-gold"></span>
-                    Award-Winning Design Excellence
+                    Design and execution by one team
                 </div>
                 <div class="trust-item">
                     <span class="dot dot-peacock"></span>
-                    Trusted Across Hyderabad
+                    Based in Hyderabad
                 </div>
                 <div class="trust-item">
                     <span class="dot dot-lotus"></span>
-                    Your Vision, Our Commitment
+                    Built around your brief
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.03) 0%, rgba(212, 175, 55, 0.03) 100%);">
-        <div class="section-header">
-            <h2>The <span class="highlight">KCP Interia Story</span></h2>
-            <p>Where passion meets precision, and dreams take shape</p>
-        </div>
-        
-        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <div style="background: rgba(255, 255, 255, 0.9); padding: 3rem; border-radius: 2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); margin-bottom: 3rem;">
-                <p style="font-size: 1.2rem; line-height: 2; color: var(--foreground); margin-bottom: 2rem;">
-                    Every space has a story waiting to be told. At KCP INTERIA, we are storytellers, dream weavers, and space makers who believe that where you live, work, and gather should feel like the truest expression of who you are.
-                </p>
-                <p style="font-size: 1.1rem; line-height: 1.9; color: var(--muted); margin-bottom: 2rem;">
-                    Since 2008, we have had the privilege of transforming over 300 spaces across Hyderabad and beyond. From family homes that echo with laughter to luxurious hotels that welcome travelers, from dynamic offices that spark creativity to chic commercial spaces that captivate customers. Each project is a journey we take together with our clients.
-                </p>
-                <p style="font-size: 1.1rem; line-height: 1.9; color: var(--muted);">
-                    What sets us apart is the way we listen. We believe the best interiors emerge when creativity meets genuine understanding of how you live, what you love, and what makes your heart feel at home.
-                </p>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div style="text-align: center;">
-                    <div style="font-size: 3rem; font-family: 'Cinzel', serif; color: var(--peacock); font-weight: 700; margin-bottom: 0.5rem;">2008</div>
-                    <div style="color: var(--muted); font-weight: 500;">Founded with a Vision</div>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 3rem; font-family: 'Cinzel', serif; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">300+</div>
-                    <div style="color: var(--muted); font-weight: 500;">Projects Completed</div>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 3rem; font-family: 'Cinzel', serif; color: var(--lotus); font-weight: 700; margin-bottom: 0.5rem;">17+</div>
-                    <div style="color: var(--muted); font-weight: 500;">Years of Excellence</div>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 3rem; font-family: 'Cinzel', serif; color: var(--peacock); font-weight: 700; margin-bottom: 0.5rem;">∞</div>
-                    <div style="color: var(--muted); font-weight: 500;">Possibilities Created</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission & Vision -->
-    <section style="background: white;">
-        <div style="max-width: 1000px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                <div style="background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%); color: white; padding: 3rem; border-radius: 2rem; box-shadow: 0 20px 60px rgba(30, 58, 138, 0.2);">
-                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem; font-family: 'Cormorant Garamond', serif;">Our Mission</h3>
-                    <p style="line-height: 1.8; opacity: 0.95;">To deliver exceptional interior design solutions where beauty dances with functionality, creating spaces that look stunning and feel absolutely right for the people who live in them.</p>
-                </div>
-                
-                <div style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--foreground); padding: 3rem; border-radius: 2rem; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);">
-                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem; font-family: 'Cormorant Garamond', serif;">Our Vision</h3>
-                    <p style="line-height: 1.8;">To lead the interior design industry with innovative solutions that transform spaces, enhance lives, spark joy, and create lasting memories for generations to come.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Foundations -->
-    <section style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.03) 0%, rgba(212, 175, 55, 0.03) 100%);">
-        <div class="section-header">
-            <h2>Our <span class="highlight">Foundations</span></h2>
-            <p>The principles that guide every project we undertake</p>
-        </div>
-        
-        <div class="trust-grid">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h3>Passion</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p>Design beyond trends. We create timeless spaces that endure and inspire.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h3>Empathy</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p>Homes shaped around your life, not the other way around.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h3>Craft</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p>Materials, light, and balance woven with intention and precision.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h3>Innovation</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p>We constantly seek better solutions to create meaningful impact.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founder Section -->
-    <section style="background: linear-gradient(135deg, rgba(219, 112, 147, 0.05) 0%, rgba(30, 58, 138, 0.05) 100%);">
-        <div class="section-header">
-            <h2>Meet <span class="highlight">Chintan K Parikh</span></h2>
-            <p>The visionary behind every beautiful space</p>
-        </div>
-        
-        <div style="max-width: 800px; margin: 0 auto;">
-            <div style="background: rgba(255, 255, 255, 0.9); padding: 3rem; border-radius: 2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); text-align: center;">
-                <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--peacock) 0%, var(--gold) 100%); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700; font-family: 'Cinzel', serif;">CP</div>
-                
-                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--peacock); font-family: 'Cormorant Garamond', serif;">Founder & Visionary</h3>
-                
-                <p style="font-size: 1.15rem; line-height: 2; color: var(--foreground); margin-bottom: 1.6rem;">
-                    With an unwavering focus on design and over a decade of hands on experience, Chintan Parikh is the heart and soul of KCP INTERIA. What started as a dream to create beautiful spaces has blossomed into a journey of transforming lives through thoughtful design.
-                </p>
-                
-                <p style="font-size: 1.08rem; line-height: 1.95; color: var(--accent);">
-                    Known for boundless creativity, innovative thinking, and meticulous attention to detail, Chintan creates experiences through design. Every curve, every color, every texture is chosen with care and purpose. Under this leadership, KCP INTERIA has become synonymous with designs that blend functionality with artistic flair, always putting clients at the heart of every decision. At the end of the day, it is about creating spaces where people love to live.
-                </p>
-
-                <p style="font-size: 1.05rem; line-height: 1.95; color: var(--muted);">
-                     While guided by a strong creative vision, KCP INTERIA is powered by a close knit team of designers and craftsmen who bring this vision to life through collaboration, precision, and shared values. A successful journey marked by 300+ completed projects, including dream homes, plug and play corporate offices, jewellery showrooms, and commercial spaces, to name a few among many other diverse projects; all backed by satisfied client testimonials.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Cards -->
+<!-- Trust Cards -->
     <section>
         <div class="section-header">
             <h2>Why <span class="highlight">Choose Us</span></h2>
-            <p>The core values that define our approach to every project</p>
+            <p>A few reasons clients come back to us</p>
         </div>
         
         <div class="trust-grid">
@@ -1208,7 +108,7 @@
                         <h3>Since 2008</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>17 years of trust, craft, and design excellence</p>
+                        <p>Designing and building in Hyderabad for over 17 years</p>
                     </div>
                 </div>
             </div>
@@ -1220,7 +120,7 @@
                         <h3>300+ Projects</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>Luxury homes, boutique hotels, offices, villas and more. Each one unique</p>
+                        <p>Homes, villas, hotels, offices and showrooms, each designed for its owner</p>
                     </div>
                 </div>
             </div>
@@ -1229,10 +129,10 @@
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="card-icon" style="background: linear-gradient(135deg, var(--lotus) 0%, var(--lotus-light) 100%); color: white; font-size: 1.5rem; font-weight: 600;">A-Z</div>
-                        <h3>End to End Turnkey Solutions</h3>
+                        <h3>Turnkey, Start to Finish</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>From dream to reality. We handle everything with care and expertise</p>
+                        <p>Design, materials, contractors and site work, all handled by one team</p>
                     </div>
                 </div>
             </div>
@@ -1250,331 +150,11 @@
             </div>
         </div>
     </section>
-
-<!-- ---------------------------- -->
-
-<!-- Portfolio -->
-<section id="portfolio">
-    <div class="section-header">
-        <h2>Our <span class="highlight">Projects</span></h2>
-        <p>Each space tells a unique story. </p>
-    </div>
-
-<!-- ===================== VIDEO SECTION ===================== -->
-<div style="max-width: 1000px; margin: 0 auto 5rem;">
-
-    <h2 style="text-align:center; margin-bottom:2rem; color:var(--peacock);">
-       Our Work in Motion
-    </h2>
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-
-        <video controls style="width:100%; border-radius:1rem;">
-            <source src="Videos/1.mp4" type="video/mp4">
-        </video>
-
-        <!-- <video controls style="width:100%; border-radius:1rem;">
-            <source src="Videos/2.mp4" type="video/mp4">
-        </video>
-
-        <video controls style="width:100%; border-radius:1rem;">
-            <source src="Videos/3.mp4" type="video/mp4">
-        </video> -->
-
-        <video controls style="width:100%; border-radius:1rem;">
-            <source src="Videos/4.mp4" type="video/mp4">
-        </video>
-
-        <!-- <video controls style="width:100%; border-radius:1rem;">
-            <source src="Videos/5.mp4" type="video/mp4">
-        </video> -->
-
-    </div>
-
-    <!-- Video Link -->
-    <p style="text-align:center; margin-top:1.5rem;">
-        <a href="https://drive.google.com/drive/folders/1X5QXqRSFZm7AVzJLN_-xWIphhn6Rsy4z?usp=drive_link" target="_blank">
-            View more of our walkthroughs →
-        </a>
-    </p>
-
-</div>
-
-<!-- ===================== COMPLETE SPACES ===================== -->
-<div style="max-width: 1000px; margin: 0 auto 5rem;">
-
-    <h2 style="text-align:center; margin-bottom:2rem; color:var(--peacock);">
-        Complete Spaces
-    </h2>
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-
-         <img src="images/Projects/completespaces/1_.jpg" style="width:100%; border-radius:0.75rem;">
-         <img src="images/Projects/completespaces/2_.jpg" style="width:100%; border-radius:0.75rem;">
-         <img src="images/Projects/completespaces/3_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/1.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/2.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/3.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/4.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/4_.jpg" style="width:100%; border-radius:0.75rem;">
-         <img src="images/Projects/completespaces/5_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/5.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/6.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/7.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/6_.jpg" style="width:100%; border-radius:0.75rem;">
-         <img src="images/Projects/completespaces/7_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/8_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/8.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/9.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/10.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/9_.jpg" style="width:100%; border-radius:0.75rem;">
-         <img src="images/Projects/completespaces/10_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/11.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/completespaces/12.jpg" style="width:100%; border-radius:0.75rem;">
-
-    </div>
-
-    <!-- Link -->
-    <p style="text-align:center; margin-top:1.5rem;">
-        <a href="https://drive.google.com/drive/folders/1aY1aSosW7hEVSQ-nP-VGNFC_mCFZWFyw?usp=drive_link" target="_blank">
-            View more of our work →
-        </a>
-    </p>
-
-</div>
-    
-<!-- ===================== DESIGN DETAILS ===================== -->
-<div style="max-width: 1000px; margin: 0 auto 5rem;">
-
-    <h2 style="text-align:center; margin-bottom:2rem; color:var(--peacock);">
-        Design Details
-    </h2>
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-
-        <img src="images/Projects/designdetails/1_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/2_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/3_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/4_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/1.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/2.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/5_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/6_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/7_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/8_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/9_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/3.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/4.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/5.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/10_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/11_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/12_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/13_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/14_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/6.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/7.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/8.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/15_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/16_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/17_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/18_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/9.jpg" style="width:100%; border-radius:0.75rem;">
-         <img src="images/Projects/designdetails/19_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/20_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/21_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/22_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/10.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/23_.jpg" style="width:100%; border-radius:0.75rem;">
-        <img src="images/Projects/designdetails/24_.jpg" style="width:100%; border-radius:0.75rem;">
-    </div>
-
-    <!-- Link -->
-    <p style="text-align:center; margin-top:1.5rem;">
-        <a href="https://drive.google.com/drive/folders/1lXF9hvV76J8NwpZ99OIEhHWIR7HCo8jO?usp=drive_link" target="_blank">
-             View more of our work →
-        </a>
-    </p>
-</div>
-
-<!-- View More Walkthroughs Section -->
-<div style="
-    max-width: 500px;
-    margin: 3rem auto;
-    padding: 2rem;
-    text-align: center;
-    border-radius: 1.25rem;
-    background: rgba(255,255,255,0.7);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    backdrop-filter: blur(8px);
-">
-
-    <p style="margin-bottom: 1rem; font-size: 1rem; color: var(--muted);">
-        Take a closer look at our projects, walkthroughs, and the way we work.
-    </p>
-
-    <a href="https://drive.google.com/drive/folders/1_gUpGqzo4hJAAL2zuhqw37XaqAQ6tp0W?usp=drive_link" 
-       target="_blank"
-       style="font-size: 1.05rem; color: var(--peacock); text-decoration: none; font-weight: 600;">
-        Explore our work →
-    </a>
-
-</div>
-
-<!-- ----------------------- -->
-    <!-- Services -->
-    <section id="services">
-        <div class="section-header">
-            <h2>What <span class="highlight">We Create</span></h2>
-            <p>Comprehensive design solutions tailored to your unique vision</p>
-        </div>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3>Residential Design</h3>
-                <p>Creating personalized, comfortable homes that reflect your lifestyle. From cozy apartments to sprawling family estates.</p>
-                <ul>
-                    <li>Complete home transformations</li>
-                    <li>Room-by-room personalization</li>
-                    <li>Modular kitchens & wardrobes</li>
-                    <li>Custom furniture that tells your story</li>
-                    <li>Complete home makeovers</li>
-                </ul>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3>Hospitality Design</h3>
-                <p>Crafting unforgettable guest experiences in hotels, resorts, and boutique stays where every detail whispers welcome.</p>
-                <ul>
-                    <li>Boutique hotels with character</li>
-                    <li>Restaurant & café ambiance</li>
-                    <li>Luxurious guest room design</li>
-                    <li>Reception areas that wow</li>
-                </ul>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3>Office & Commercial Spaces</h3>
-                <p>Designing functional and inspiring workspaces and commercial areas where creativity flows, productivity soars, and your brand shines.</p>
-                <ul>
-                    <li>Modern office layouts</li>
-                    <li>Collaborative work zones</li>
-                    <li>Executive office elegance</li>
-                    <li>Co-working space solutions</li>
-                    <li>Retail store experiences</li>
-                    <li>Showroom excellence</li>
-                    <li>Restaurant atmospheres</li>
-                    <li>Brand-aligned interiors</li>
-                </ul>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3>Renovation & Remodeling</h3>
-                <p>Breathe new life into existing spaces with thoughtful redesign, balancing style and functionality.</p>
-                <ul>
-                    <li>Space optimization</li>
-                    <li>Modernization of old homes</li>
-                    <li>Structural modifications</li>
-                    <li>Heritage restoration</li>
-                </ul>
-            </div>
-
-                    <div class="service-card">
-            <div class="service-icon"></div>
-            <h3>Space Planning</h3>
-            <p>Maximize functionality and flow with intelligent layouts and smart design strategies.</p>
-            <ul>
-                <li>3D visualization</li>
-                <li>Floor plan optimization</li>
-                <li>Lighting design</li>
-                <li>Material selection</li>
-            </ul>
-        </div>
-        
-        <div class="service-card">
-            <div class="service-icon"></div>
-            <h3>Consultation</h3>
-            <p>Expert guidance for design decisions, project planning, and material selection, ensuring your vision comes to life.</p>
-            <ul>
-                <li>Design direction</li>
-                <li>Budget planning</li>
-                <li>Material sourcing</li>
-                <li>Vendor coordination</li>
-            </ul>
-        </div>
-        
-        <div class="service-card">
-            <div class="service-icon"></div>
-            <h3>Project Management</h3>
-            <p>Seamless execution from start to finish, delivering quality, timely results and peace of mind.</p>
-            <ul>
-                <li>Timeline management</li>
-                <li>Quality control</li>
-                <li>Vendor management</li>
-                <li>Post-completion support</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-    <!-- Process -->
-    <section id="process">
-        <div class="section-header">
-            <h2>How <span class="highlight">We Work</span></h2>
-            <p>Your journey from dream to reality, step by thoughtful step</p>
-        </div>
-        
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-number">1</div>
-                <div class="timeline-content">
-                    <h3>Getting to Know You</h3>
-                    <p>We start with a warm conversation over coffee or chai. Tell us about your dreams, your daily rhythms, what makes you smile. We are all ears, because the best designs come from truly understanding your story.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-number">2</div>
-                <div class="timeline-content">
-                    <h3>Bringing Ideas to Life</h3>
-                    <p>Armed with your vision, we create initial concepts through sketches, AutoCAD drafting, 3D visualizations, walkthroughs, and curated material palettes. This is where your wish becomes reality.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-number">3</div>
-                <div class="timeline-content">
-                    <h3>Refining Every Detail</h3>
-                    <p>We dive deep into the details. Every measurement, material, and light switch matters. Through realistic 3D renderings and detailed drawings, we refine until everything feels just right.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-number">4</div>
-                <div class="timeline-content">
-                    <h3>Making It Real</h3>
-                    <p>Our skilled team brings your design to life with careful craftsmanship and coordinated execution. We keep you updated every step of the way, because we know waiting for your dream space is exciting.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-number">5</div>
-                <div class="timeline-content">
-                    <h3>Welcome Home</h3>
-                    <p>The moment you have been waiting for. We hand over your completed space with final styling touches, complete documentation, and ongoing support. </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
+<!-- Testimonials -->
     <section id="testimonials">
         <div class="section-header">
             <h2>Client <span class="highlight">Testimonials</span></h2>
-            <p>Real experiences from the spaces we have created together</p>
+            <p>What our clients say</p>
         </div>
         
         <div class="testimonials-slider">
@@ -1586,163 +166,53 @@
             </div>
         </div>
     </section>
-
-    <!-- Client Feedback -->
-    <section style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%); padding: 3rem 2rem;">
-        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-            <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--peacock);"> Worked together with KCP Interia? Share your experience</h3>
-            <p style="color: var(--muted); margin-bottom: 2rem; line-height: 1.8;">Your feedback helps us grow and helps future clients make informed decisions. We would be glad to hear about your experiences.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz8OjcCZpSsGaHKfTrCPUyxvt0AETCHlEjMSKlJr7x_my-og/viewform?usp=header" target="_blank" class="btn btn-primary">
-                Share Your Feedback
-            </a>
+    <!-- Talk to us -->
+    <section class="kcp-cta">
+        <div>
+            <h3>Planning a new home, an office, a hotel or just one room?</h3>
+            <p>Send us a message, give us a call, or visit our studio in Hyderabad.</p>
+            <a href="contact.html" class="btn btn-primary">Talk to Us</a>
         </div>
     </section>
+    </main>
 
-    <!-- Contact -->
-    <section id="contact">
-        <div class="section-header">
-            <h2>Let's <span class="highlight">Start Your Journey</span></h2>
-            <p>Your dream space is just a conversation away</p>
-        </div>
-        
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>We Would Love to Hear From You</h3>
-                <p>Whether you are planning a complete home transformation, a boutique hotel project, or just want to chat about possibilities, we are here. Drop us a message, give us a call, or swing by our office in Hyderabad. </p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <strong>Email</strong><br>
-                            kcpinteria@gmail.com
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <strong>Phone</strong><br>
-                            +91 98490 77702<br>
-                            +91 81210 77702
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <strong>Visit Our Studio</strong><br>
-                            1-1-36/3, RTC X Road<br>
-                            Jawahar Nagar, Kavadiguda<br>
-                            Hyderabad - 500 020
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <form class="contact-form" id="contactForm" method="POST" action="https://script.google.com/macros/s/AKfycbxFgoZRw9GTgNYaJ2oYh1kH4yoMXi6azaQNyh5Vy0lhdLz44BDup058kG76Jxz_LZY1/exec">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Your name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email"  name="email" required placeholder="your@email.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
-                </div>
-                
-                <div class="form-group">
-                    <label for="projectType">Project Type</label>
-                    <select id="projectType" name="projectType">
-                        <option value="">Select project type</option>
-                        <option value="residential">Residential Home</option>
-                        <option value="commercial">Commercial Office</option>
-                        <option value="farmhouse">Farmhouse/Villa</option>
-                        <option value="studio">Studio</option>
-                        <option value="renovation">Renovation</option>
-                        <option value="consultation">Consultation Only</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Tell us about your project *</label>
-                    <textarea id="message" name="message" required placeholder="Share your vision, timeline, budget range, or any specific requirements..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message →</button>
-            </form>
-        </div>
-    </section>
-
-    <script>
-            const form = document.getElementById("contactForm");
-
-            form.addEventListener("submit", function(e) {
-                e.preventDefault(); // prevent default page reload
-
-                const formData = new FormData(form);
-
-                fetch(form.action, {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(result => {
-                    alert("Thank you for your message! We'll get in touch with you soon."); // popup message
-                    form.reset(); // clear the form
-                })
-                .catch(error => {
-                    alert("Oops! There was an error. Please try again.");
-                    console.error(error);
-                });
-            });
-    </script>
-
-    <!-- Footer -->
+    <!-- Footer (same on every page) -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>KCP INTERIA</h4>
-                <p>Transforming spaces, crafting dreams. Since 2008, we have been turning visions into beautiful realities across Hyderabad and beyond.</p>
+                <h4><img src="images/signature.png" alt="" style="height: 3rem; width: 3rem; border-radius: 0.6rem; display: block; margin-bottom: 0.75rem;">KCP Interia</h4>
+                <p>Interior design studio in Hyderabad. Designing and building homes, offices and commercial spaces since 2008.</p>
             </div>
-            
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="#home">Home</a>
-                <a href="#about">About Us</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#services">Services</a>
-                <a href="#process">Our Process</a>
-                <a href="#testimonials">Testimonials</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="work.html">Our Work</a>
+                <a href="services.html">Services</a>
+                <a href="services.html#process">Our Process</a>
+                <a href="index.html#testimonials">Testimonials</a>
+                <a href="contact.html">Contact</a>
             </div>
-            
             <div class="footer-section">
                 <h4>What We Do</h4>
-                <a href="#services">Residential Design</a>
-                <a href="#services">Hospitality Design</a>
-                <a href="#services">Office Interiors</a>
-                <a href="#services">Commercial Spaces</a>
-                <a href="#services">Renovation Projects</a>
+                <a href="services.html">Residential Design</a>
+                <a href="services.html">Hospitality Design</a>
+                <a href="services.html">Office Interiors</a>
+                <a href="services.html">Commercial Spaces</a>
+                <a href="services.html">Renovation Projects</a>
             </div>
-            
             <div class="footer-section">
                 <h4>Get In Touch</h4>
-                <p>📧 kcpinteria@gmail.com</p>
-                <p>📱 +91 98490 77702</p>
-                <p>📱 +91 81210 77702</p>
-                <p>📍 1-1-36/3, RTC X Road<br>
+                <p>kcpinteria@gmail.com</p>
+                <p>+91 98490 77702</p>
+                <p>+91 81210 77702</p>
+                <p>1-1-36/3, RTC X Road<br>
                    Jawahar Nagar, Kavadiguda<br>
-                   Hyderabad - 500 020</p>
+                   Hyderabad 500 020</p>
             </div>
         </div>
-        
         <div class="footer-bottom">
-            <p>2025 KCP INTERIA. All rights reserved. Designed with care for dreamers and homemakers</p>
+            <p>© 2026 KCP Interia. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1751,205 +221,9 @@
        class="whatsapp-float" 
        target="_blank" 
        aria-label="Chat on WhatsApp">
-        <span style="font-size: 1.8rem;">💬</span>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"></path></svg>
     </a>
 
-    <script>
-        // Project gallery images - Add your actual image URLs here
-        const projectGalleries = {
-            'homes': [
-                'https://via.placeholder.com/1200x800/1e3a8a/ffffff?text=Home+Image+1',
-                'https://via.placeholder.com/1200x800/d4af37/ffffff?text=Home+Image+2',
-                'https://via.placeholder.com/1200x800/db7093/ffffff?text=Home+Image+3',
-                  <img src="images/signature.jpg" alt="" />
-            ],
-            'villas': [
-                'https://via.placeholder.com/1200x800/1e3a8a/ffffff?text=Villa+Image+1',
-                'https://via.placeholder.com/1200x800/d4af37/ffffff?text=Villa+Image+2',
-                'https://via.placeholder.com/1200x800/db7093/ffffff?text=Villa+Image+3'
-            ],
-            'hotels': [
-                'https://via.placeholder.com/1200x800/1e3a8a/ffffff?text=Hotel+Image+1',
-                'https://via.placeholder.com/1200x800/d4af37/ffffff?text=Hotel+Image+2',
-                'https://via.placeholder.com/1200x800/db7093/ffffff?text=Hotel+Image+3'
-            ],
-            'commercial1': [
-                'https://via.placeholder.com/1200x800/1e3a8a/ffffff?text=Commercial+Image+1',
-                'https://via.placeholder.com/1200x800/d4af37/ffffff?text=Commercial+Image+2',
-                'https://via.placeholder.com/1200x800/db7093/ffffff?text=Commercial+Image+3'
-            ],
-            'commercial2': [
-                'https://via.placeholder.com/1200x800/1e3a8a/ffffff?text=Luxury+Image+1',
-                'https://via.placeholder.com/1200x800/d4af37/ffffff?text=Luxury+Image+2',
-                'https://via.placeholder.com/1200x800/db7093/ffffff?text=Luxury+Image+3'
-            ],
-            'homes2': [
-                'https://via.placeholder.com/1200x800/1e3a8a/ffffff?text=Apartment+Image+1',
-                'https://via.placeholder.com/1200x800/d4af37/ffffff?text=Apartment+Image+2',
-                'https://via.placeholder.com/1200x800/db7093/ffffff?text=Apartment+Image+3'
-            ]
-        };
-
-        let currentGallery = [];
-        let currentImageIndex = 0;
-
-        function openLightbox(index, galleryKey) {
-            currentGallery = projectGalleries[galleryKey] || [];
-            currentImageIndex = index;
-            
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightboxImage');
-            const lightboxCounter = document.getElementById('lightboxCounter');
-            
-            if (currentGallery.length > 0) {
-                lightboxImage.src = currentGallery[currentImageIndex];
-                lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            
-            if (currentImageIndex < 0) {
-                currentImageIndex = currentGallery.length - 1;
-            } else if (currentImageIndex >= currentGallery.length) {
-                currentImageIndex = 0;
-            }
-            
-            const lightboxImage = document.getElementById('lightboxImage');
-            const lightboxCounter = document.getElementById('lightboxCounter');
-            
-            lightboxImage.src = currentGallery[currentImageIndex];
-            lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
-        }
-
-        // Close lightbox with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                changeImage(-1);
-            } else if (e.key === 'ArrowRight') {
-                changeImage(1);
-            }
-        });
-
-        // Close lightbox when clicking outside the image
-        document.getElementById('lightbox').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-        
-        // Portfolio Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'scale(0.9)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-        
-        // Contact Form Submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                projectType: document.getElementById('projectType').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Here you would typically send this to a backend
-            console.log('Form submitted:', formData);
-            
-            // Show success message
-            alert('Thank you for your inquiry! We\'ll get back to you within 24 hours. 🎉');
-            
-            // Reset form
-            contactForm.reset();
-        });
-        
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
-            

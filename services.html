@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | KCP Interia</title>
+    <meta name="description" content="Residential, hospitality, office and commercial interiors, renovation, space planning, consultation and project management.">
+    <meta name="theme-color" content="#025070">
+
+    <!-- Browser tab icon and phone home-screen icon: the KCP Interia logo -->
+    <link rel="icon" href="images/signature.ico" sizes="any">
+    <link rel="icon" href="images/signature.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/signature.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+    /* Decides before the page appears whether to show the opening animation, the lamp or the doors. */
+    (function () { try {
+        var d = document.documentElement, s = sessionStorage, a = s.getItem('kcp-arrive');
+        s.removeItem('kcp-arrive');
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!s.getItem('kcp-seen')) d.classList.add('kcp-intro');
+        else if (a === 'doors') d.classList.add('kcp-arrive-doors');
+        else if (a === 'lamp') d.classList.add('kcp-arrive-lamp');
+    } catch (e) {} })();
+    </script>
+</head>
+<body class="page-services">
+    <!-- Opening animation, lamp and doors (controlled by assets/js/site.js) -->
+    <div class="kcp-loader" id="kcpLoader" aria-hidden="true">
+        <svg viewBox="0 0 1000 900" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><radialGradient id="kcpLampGlow"><stop offset="0" stop-color="#ffe9b0" stop-opacity=".95"/><stop offset=".45" stop-color="#ffe9b0" stop-opacity=".35"/><stop offset="1" stop-color="#ffe9b0" stop-opacity="0"/></radialGradient></defs><circle class="glow" cx="440" cy="650" r="190" fill="url(#kcpLampGlow)" opacity="0"/><path class="draw" pathLength="1" d="M168 288 L630 7" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M325 10 L947 588" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M168 288 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M30 855 H995" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M797 275 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M863 275 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M246 805 V715 A36 36 0 0 1 282 679 H322 A36 36 0 0 1 358 715 V805" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M246 740 A30 30 0 0 0 216 770 V790 A15 15 0 0 0 231 805 H373 A15 15 0 0 0 388 790 V770 A30 30 0 0 0 358 740" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M272 805 V855 M332 805 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" stroke="#79c8dc" stroke-width="6"/><path class="fillin" d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" fill="#79c8dc" opacity="0"/><path class="draw" pathLength="1" d="M118 485 H568" stroke="#87c49b" stroke-width="9"/><path class="draw" pathLength="1" d="M440 485 V548" stroke="#87c49b" stroke-width="6"/><path class="draw" pathLength="1" d="M426 568 A14 14 0 0 1 454 568" stroke="#87c49b" stroke-width="6"/><path class="draw" pathLength="1" d="M440 568 L486 622 H394 Z" stroke="#87c49b" stroke-width="6"/><g class="fillin" fill="#87c49b" opacity="0"><rect x="393" y="275" width="47" height="47"/><rect x="447" y="275" width="47" height="47"/><rect x="393" y="329" width="47" height="47"/><rect x="447" y="329" width="47" height="47"/></g><path class="fillin" d="M422 626 A18 18 0 0 0 458 626 Z" fill="#87c49b" opacity="0"/></svg>
+        <div class="kcp-loader-name"><span class="m"><span class="c">K</span></span><span class="m"><span class="c">C</span></span><span class="m"><span class="c">P</span></span><span class="m"><span class="c">&nbsp;</span></span><span class="m"><span class="c">I</span></span><span class="m"><span class="c">n</span></span><span class="m"><span class="c">t</span></span><span class="m"><span class="c">e</span></span><span class="m"><span class="c">r</span></span><span class="m"><span class="c">i</span></span><span class="m"><span class="c">a</span></span></div>
+        <div class="kcp-loader-tag">Bridging Vision to Reality</div>
+        <button class="kcp-skip" type="button">Skip</button>
+    </div>
+    <div class="kcp-dim" id="kcpDim" aria-hidden="true"></div>
+    <div class="kcp-lamp" id="kcpLamp" aria-hidden="true">
+        <svg viewBox="0 0 100 160"><line x1="50" y1="0" x2="50" y2="78" stroke="#87c49b" stroke-width="3"/><path d="M42 90 A8 8 0 0 1 58 90" stroke="#87c49b" stroke-width="3" fill="none"/><path d="M50 90 L76 122 H24 Z" stroke="#87c49b" stroke-width="3" fill="#025070" stroke-linejoin="round"/><circle class="halo" cx="50" cy="128" r="26" fill="#ffe9b0"/><path class="bulb" d="M40 124 A10 10 0 0 0 60 124 Z"/></svg>
+    </div>
+    <div class="kcp-door kcp-door-l" id="kcpDoorL" aria-hidden="true"><div class="kcp-pan kcp-pan-t"></div><div class="kcp-pan kcp-pan-b"></div><div class="kcp-handle"></div><div class="kcp-half kcp-crest"><svg viewBox="0 0 1000 900" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M168 288 L630 7" stroke="#79c8dc" stroke-width="16"/><path d="M325 10 L947 588" stroke="#79c8dc" stroke-width="16"/><path d="M168 288 V855" stroke="#79c8dc" stroke-width="16"/><path d="M30 855 H995" stroke="#79c8dc" stroke-width="16"/><path d="M797 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M863 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M246 805 V715 A36 36 0 0 1 282 679 H322 A36 36 0 0 1 358 715 V805" stroke="#79c8dc" stroke-width="16"/><path d="M246 740 A30 30 0 0 0 216 770 V790 A15 15 0 0 0 231 805 H373 A15 15 0 0 0 388 790 V770 A30 30 0 0 0 358 740" stroke="#79c8dc" stroke-width="16"/><path d="M272 805 V855 M332 805 V855" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" fill="#79c8dc"/><path d="M118 485 H568" stroke="#87c49b" stroke-width="24"/><path d="M440 485 V548" stroke="#87c49b" stroke-width="16"/><path d="M426 568 A14 14 0 0 1 454 568" stroke="#87c49b" stroke-width="16"/><path d="M440 568 L486 622 H394 Z" stroke="#87c49b" stroke-width="16"/><g fill="#87c49b"><rect x="393" y="275" width="47" height="47"/><rect x="447" y="275" width="47" height="47"/><rect x="393" y="329" width="47" height="47"/><rect x="447" y="329" width="47" height="47"/></g><path d="M422 626 A18 18 0 0 0 458 626 Z" fill="#87c49b"/></svg></div><div class="kcp-half kcp-doorname"><div><div class="w1">KCP INTERIA</div><div class="w2">Bridging Vision to Reality</div></div></div></div>
+    <div class="kcp-door kcp-door-r" id="kcpDoorR" aria-hidden="true"><div class="kcp-pan kcp-pan-t"></div><div class="kcp-pan kcp-pan-b"></div><div class="kcp-handle"></div><div class="kcp-half kcp-crest"><svg viewBox="0 0 1000 900" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M168 288 L630 7" stroke="#79c8dc" stroke-width="16"/><path d="M325 10 L947 588" stroke="#79c8dc" stroke-width="16"/><path d="M168 288 V855" stroke="#79c8dc" stroke-width="16"/><path d="M30 855 H995" stroke="#79c8dc" stroke-width="16"/><path d="M797 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M863 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M246 805 V715 A36 36 0 0 1 282 679 H322 A36 36 0 0 1 358 715 V805" stroke="#79c8dc" stroke-width="16"/><path d="M246 740 A30 30 0 0 0 216 770 V790 A15 15 0 0 0 231 805 H373 A15 15 0 0 0 388 790 V770 A30 30 0 0 0 358 740" stroke="#79c8dc" stroke-width="16"/><path d="M272 805 V855 M332 805 V855" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" fill="#79c8dc"/><path d="M118 485 H568" stroke="#87c49b" stroke-width="24"/><path d="M440 485 V548" stroke="#87c49b" stroke-width="16"/><path d="M426 568 A14 14 0 0 1 454 568" stroke="#87c49b" stroke-width="16"/><path d="M440 568 L486 622 H394 Z" stroke="#87c49b" stroke-width="16"/><g fill="#87c49b"><rect x="393" y="275" width="47" height="47"/><rect x="447" y="275" width="47" height="47"/><rect x="393" y="329" width="47" height="47"/><rect x="447" y="329" width="47" height="47"/></g><path d="M422 626 A18 18 0 0 0 458 626 Z" fill="#87c49b"/></svg></div><div class="kcp-half kcp-doorname"><div><div class="w1">KCP INTERIA</div><div class="w2">Bridging Vision to Reality</div></div></div></div>
+    <div class="kcp-seam" id="kcpSeam" aria-hidden="true"></div>
+
+    <!-- Top bar (same on every page) -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="KCP Interia home"><img src="images/signature.png" alt=""><span>KCP INTERIA</span></a>
+            <div class="tagline">Bridging Vision to Reality</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html" aria-current="page">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+        </div>
+    </nav>
+
+    <main id="main">
+<!-- Services -->
+    <section id="services">
+        <div class="section-header">
+            <h2>What <span class="highlight">We Create</span></h2>
+            <p>What we design and build</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Residential Design</h3>
+                <p>Homes designed around your family and your routine, from compact apartments to large family homes.</p>
+                <ul>
+                    <li>Complete home transformations</li>
+                    <li>Room-by-room personalization</li>
+                    <li>Modular kitchens & wardrobes</li>
+                    <li>Custom furniture</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Hospitality Design</h3>
+                <p>Hotels, restaurants and boutique stays that guests remember and staff find easy to run.</p>
+                <ul>
+                    <li>Boutique hotels</li>
+                    <li>Restaurants & cafés</li>
+                    <li>Guest rooms</li>
+                    <li>Reception & lobby areas</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Office & Commercial Spaces</h3>
+                <p>Offices, shops and showrooms planned around how your team works and how your customers move through the space.</p>
+                <ul>
+                    <li>Office layouts</li>
+                    <li>Collaborative work zones</li>
+                    <li>Executive cabins</li>
+                    <li>Co-working spaces</li>
+                    <li>Retail stores</li>
+                    <li>Showrooms</li>
+                    <li>Waiting & meeting areas</li>
+                    <li>Interiors that match your brand</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Renovation & Remodeling</h3>
+                <p>Updating older homes and buildings so they suit the way you live now.</p>
+                <ul>
+                    <li>Space optimization</li>
+                    <li>Modernization of old homes</li>
+                    <li>Structural modifications</li>
+                    <li>Heritage restoration</li>
+                </ul>
+            </div>
+
+                    <div class="service-card">
+            <div class="service-icon"></div>
+            <h3>Space Planning</h3>
+            <p>Layouts that make good use of every square foot.</p>
+            <ul>
+                <li>3D visualization</li>
+                <li>Floor plan optimization</li>
+                <li>Lighting design</li>
+                <li>Material selection</li>
+            </ul>
+        </div>
+        
+        <div class="service-card">
+            <div class="service-icon"></div>
+            <h3>Consultation</h3>
+            <p>Advice on design, planning and materials, if you would like to run the project yourself.</p>
+            <ul>
+                <li>Design direction</li>
+                <li>Budget planning</li>
+                <li>Material sourcing</li>
+                <li>Vendor coordination</li>
+            </ul>
+        </div>
+        
+        <div class="service-card">
+            <div class="service-icon"></div>
+            <h3>Project Management</h3>
+            <p>We manage contractors, schedules and quality on site, so you do not have to.</p>
+            <ul>
+                <li>Timeline management</li>
+                <li>Quality control</li>
+                <li>Vendor management</li>
+                <li>Post-completion support</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- Process -->
+    <section id="process">
+        <div class="section-header">
+            <h2>How <span class="highlight">We Work</span></h2>
+            <p>What working with us looks like</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <h3>Getting to Know You</h3>
+                    <p>We meet over coffee or chai and talk about how you live, what you need and what you want to spend. The more we understand, the better the design.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <h3>First Ideas</h3>
+                    <p>We prepare sketches, AutoCAD drawings, 3D views, walkthroughs and material samples, so you can see the idea before anything is built.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <h3>Detailing</h3>
+                    <p>We work through every measurement, material and switch position with detailed drawings and realistic 3D renders, until you are happy with it.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                    <h3>On Site</h3>
+                    <p>Our team and craftsmen build it, and we keep you updated as the work moves along.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <div class="timeline-content">
+                    <h3>Welcome Home</h3>
+                    <p>We hand over the finished space with final styling, complete documentation and support after you move in. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer (same on every page) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><img src="images/signature.png" alt="" style="height: 3rem; width: 3rem; border-radius: 0.6rem; display: block; margin-bottom: 0.75rem;">KCP Interia</h4>
+                <p>Interior design studio in Hyderabad. Designing and building homes, offices and commercial spaces since 2008.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="work.html">Our Work</a>
+                <a href="services.html">Services</a>
+                <a href="services.html#process">Our Process</a>
+                <a href="index.html#testimonials">Testimonials</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>What We Do</h4>
+                <a href="services.html">Residential Design</a>
+                <a href="services.html">Hospitality Design</a>
+                <a href="services.html">Office Interiors</a>
+                <a href="services.html">Commercial Spaces</a>
+                <a href="services.html">Renovation Projects</a>
+            </div>
+            <div class="footer-section">
+                <h4>Get In Touch</h4>
+                <p>kcpinteria@gmail.com</p>
+                <p>+91 98490 77702</p>
+                <p>+91 81210 77702</p>
+                <p>1-1-36/3, RTC X Road<br>
+                   Jawahar Nagar, Kavadiguda<br>
+                   Hyderabad 500 020</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 KCP Interia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919849077702?text=Hello KCP Interia team, I am interested in your interior design services" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Chat on WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"></path></svg>
+    </a>
+
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

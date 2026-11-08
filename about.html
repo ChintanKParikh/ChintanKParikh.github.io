@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | KCP Interia</title>
+    <meta name="description" content="The KCP Interia story, our mission and vision, the values we work by, and our founder Chintan K Parikh.">
+    <meta name="theme-color" content="#025070">
+
+    <!-- Browser tab icon and phone home-screen icon: the KCP Interia logo -->
+    <link rel="icon" href="images/signature.ico" sizes="any">
+    <link rel="icon" href="images/signature.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/signature.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+    /* Decides before the page appears whether to show the opening animation, the lamp or the doors. */
+    (function () { try {
+        var d = document.documentElement, s = sessionStorage, a = s.getItem('kcp-arrive');
+        s.removeItem('kcp-arrive');
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!s.getItem('kcp-seen')) d.classList.add('kcp-intro');
+        else if (a === 'doors') d.classList.add('kcp-arrive-doors');
+        else if (a === 'lamp') d.classList.add('kcp-arrive-lamp');
+    } catch (e) {} })();
+    </script>
+</head>
+<body class="page-about">
+    <!-- Opening animation, lamp and doors (controlled by assets/js/site.js) -->
+    <div class="kcp-loader" id="kcpLoader" aria-hidden="true">
+        <svg viewBox="0 0 1000 900" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><radialGradient id="kcpLampGlow"><stop offset="0" stop-color="#ffe9b0" stop-opacity=".95"/><stop offset=".45" stop-color="#ffe9b0" stop-opacity=".35"/><stop offset="1" stop-color="#ffe9b0" stop-opacity="0"/></radialGradient></defs><circle class="glow" cx="440" cy="650" r="190" fill="url(#kcpLampGlow)" opacity="0"/><path class="draw" pathLength="1" d="M168 288 L630 7" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M325 10 L947 588" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M168 288 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M30 855 H995" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M797 275 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M863 275 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M246 805 V715 A36 36 0 0 1 282 679 H322 A36 36 0 0 1 358 715 V805" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M246 740 A30 30 0 0 0 216 770 V790 A15 15 0 0 0 231 805 H373 A15 15 0 0 0 388 790 V770 A30 30 0 0 0 358 740" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M272 805 V855 M332 805 V855" stroke="#79c8dc" stroke-width="6"/><path class="draw" pathLength="1" d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" stroke="#79c8dc" stroke-width="6"/><path class="fillin" d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" fill="#79c8dc" opacity="0"/><path class="draw" pathLength="1" d="M118 485 H568" stroke="#87c49b" stroke-width="9"/><path class="draw" pathLength="1" d="M440 485 V548" stroke="#87c49b" stroke-width="6"/><path class="draw" pathLength="1" d="M426 568 A14 14 0 0 1 454 568" stroke="#87c49b" stroke-width="6"/><path class="draw" pathLength="1" d="M440 568 L486 622 H394 Z" stroke="#87c49b" stroke-width="6"/><g class="fillin" fill="#87c49b" opacity="0"><rect x="393" y="275" width="47" height="47"/><rect x="447" y="275" width="47" height="47"/><rect x="393" y="329" width="47" height="47"/><rect x="447" y="329" width="47" height="47"/></g><path class="fillin" d="M422 626 A18 18 0 0 0 458 626 Z" fill="#87c49b" opacity="0"/></svg>
+        <div class="kcp-loader-name"><span class="m"><span class="c">K</span></span><span class="m"><span class="c">C</span></span><span class="m"><span class="c">P</span></span><span class="m"><span class="c">&nbsp;</span></span><span class="m"><span class="c">I</span></span><span class="m"><span class="c">n</span></span><span class="m"><span class="c">t</span></span><span class="m"><span class="c">e</span></span><span class="m"><span class="c">r</span></span><span class="m"><span class="c">i</span></span><span class="m"><span class="c">a</span></span></div>
+        <div class="kcp-loader-tag">Bridging Vision to Reality</div>
+        <button class="kcp-skip" type="button">Skip</button>
+    </div>
+    <div class="kcp-dim" id="kcpDim" aria-hidden="true"></div>
+    <div class="kcp-lamp" id="kcpLamp" aria-hidden="true">
+        <svg viewBox="0 0 100 160"><line x1="50" y1="0" x2="50" y2="78" stroke="#87c49b" stroke-width="3"/><path d="M42 90 A8 8 0 0 1 58 90" stroke="#87c49b" stroke-width="3" fill="none"/><path d="M50 90 L76 122 H24 Z" stroke="#87c49b" stroke-width="3" fill="#025070" stroke-linejoin="round"/><circle class="halo" cx="50" cy="128" r="26" fill="#ffe9b0"/><path class="bulb" d="M40 124 A10 10 0 0 0 60 124 Z"/></svg>
+    </div>
+    <div class="kcp-door kcp-door-l" id="kcpDoorL" aria-hidden="true"><div class="kcp-pan kcp-pan-t"></div><div class="kcp-pan kcp-pan-b"></div><div class="kcp-handle"></div><div class="kcp-half kcp-crest"><svg viewBox="0 0 1000 900" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M168 288 L630 7" stroke="#79c8dc" stroke-width="16"/><path d="M325 10 L947 588" stroke="#79c8dc" stroke-width="16"/><path d="M168 288 V855" stroke="#79c8dc" stroke-width="16"/><path d="M30 855 H995" stroke="#79c8dc" stroke-width="16"/><path d="M797 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M863 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M246 805 V715 A36 36 0 0 1 282 679 H322 A36 36 0 0 1 358 715 V805" stroke="#79c8dc" stroke-width="16"/><path d="M246 740 A30 30 0 0 0 216 770 V790 A15 15 0 0 0 231 805 H373 A15 15 0 0 0 388 790 V770 A30 30 0 0 0 358 740" stroke="#79c8dc" stroke-width="16"/><path d="M272 805 V855 M332 805 V855" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" fill="#79c8dc"/><path d="M118 485 H568" stroke="#87c49b" stroke-width="24"/><path d="M440 485 V548" stroke="#87c49b" stroke-width="16"/><path d="M426 568 A14 14 0 0 1 454 568" stroke="#87c49b" stroke-width="16"/><path d="M440 568 L486 622 H394 Z" stroke="#87c49b" stroke-width="16"/><g fill="#87c49b"><rect x="393" y="275" width="47" height="47"/><rect x="447" y="275" width="47" height="47"/><rect x="393" y="329" width="47" height="47"/><rect x="447" y="329" width="47" height="47"/></g><path d="M422 626 A18 18 0 0 0 458 626 Z" fill="#87c49b"/></svg></div><div class="kcp-half kcp-doorname"><div><div class="w1">KCP INTERIA</div><div class="w2">Bridging Vision to Reality</div></div></div></div>
+    <div class="kcp-door kcp-door-r" id="kcpDoorR" aria-hidden="true"><div class="kcp-pan kcp-pan-t"></div><div class="kcp-pan kcp-pan-b"></div><div class="kcp-handle"></div><div class="kcp-half kcp-crest"><svg viewBox="0 0 1000 900" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M168 288 L630 7" stroke="#79c8dc" stroke-width="16"/><path d="M325 10 L947 588" stroke="#79c8dc" stroke-width="16"/><path d="M168 288 V855" stroke="#79c8dc" stroke-width="16"/><path d="M30 855 H995" stroke="#79c8dc" stroke-width="16"/><path d="M797 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M863 275 V855" stroke="#79c8dc" stroke-width="16"/><path d="M246 805 V715 A36 36 0 0 1 282 679 H322 A36 36 0 0 1 358 715 V805" stroke="#79c8dc" stroke-width="16"/><path d="M246 740 A30 30 0 0 0 216 770 V790 A15 15 0 0 0 231 805 H373 A15 15 0 0 0 388 790 V770 A30 30 0 0 0 358 740" stroke="#79c8dc" stroke-width="16"/><path d="M272 805 V855 M332 805 V855" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" stroke="#79c8dc" stroke-width="16"/><path d="M510 855 V832.5 H545 V810 H580 V787.5 H615 V765 H650 V742.5 H685 V720 H720 V697.5 H755 V675 H797 V700 L565 855 Z" fill="#79c8dc"/><path d="M118 485 H568" stroke="#87c49b" stroke-width="24"/><path d="M440 485 V548" stroke="#87c49b" stroke-width="16"/><path d="M426 568 A14 14 0 0 1 454 568" stroke="#87c49b" stroke-width="16"/><path d="M440 568 L486 622 H394 Z" stroke="#87c49b" stroke-width="16"/><g fill="#87c49b"><rect x="393" y="275" width="47" height="47"/><rect x="447" y="275" width="47" height="47"/><rect x="393" y="329" width="47" height="47"/><rect x="447" y="329" width="47" height="47"/></g><path d="M422 626 A18 18 0 0 0 458 626 Z" fill="#87c49b"/></svg></div><div class="kcp-half kcp-doorname"><div><div class="w1">KCP INTERIA</div><div class="w2">Bridging Vision to Reality</div></div></div></div>
+    <div class="kcp-seam" id="kcpSeam" aria-hidden="true"></div>
+
+    <!-- Top bar (same on every page) -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="KCP Interia home"><img src="images/signature.png" alt=""><span>KCP INTERIA</span></a>
+            <div class="tagline">Bridging Vision to Reality</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" aria-current="page">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+        </div>
+    </nav>
+
+    <main id="main">
+<!-- About Section -->
+    <section id="about" style="background: var(--ivory);">
+        <div class="section-header">
+            <h2>The <span class="highlight">KCP Interia Story</span></h2>
+            <p>Who we are and how we work</p>
+        </div>
+        
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <div style="background: rgba(255, 255, 255, 0.9); padding: 3rem; border-radius: 2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); margin-bottom: 3rem;">
+                <p style="font-size: 1.2rem; line-height: 2; color: var(--foreground); margin-bottom: 2rem;">
+                    Every home is different because every family is different. We start by understanding how you live, what you need from each room and how you want it to feel. Then we design around that.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.9; color: var(--muted); margin-bottom: 2rem;">
+                    Since 2008 we have completed more than 300 projects in Hyderabad and beyond: family homes, villas, hotels, offices, showrooms and shops. Each one was planned and built together with the people who would use it.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.9; color: var(--muted);">
+                    What we do best is listen. Good interiors come from understanding the people who will live or work in them, not from following trends.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-family: 'Cinzel', serif; color: var(--peacock); font-weight: 700; margin-bottom: 0.5rem;">2008</div>
+                    <div style="color: var(--muted); font-weight: 500;">Founded</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-family: 'Cinzel', serif; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">300+</div>
+                    <div style="color: var(--muted); font-weight: 500;">Projects Completed</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-family: 'Cinzel', serif; color: var(--lotus); font-weight: 700; margin-bottom: 0.5rem;">17+</div>
+                    <div style="color: var(--muted); font-weight: 500;">Years of practice</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-family: 'Cinzel', serif; color: var(--peacock); font-weight: 700; margin-bottom: 0.5rem;">A to Z</div>
+                    <div style="color: var(--muted); font-weight: 500;">Design to handover</div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Mission & Vision -->
+    <section style="background: white;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div style="background: linear-gradient(135deg, var(--peacock) 0%, var(--peacock-light) 100%); color: white; padding: 3rem; border-radius: 2rem; box-shadow: 0 20px 60px rgba(2, 80, 112, 0.2);">
+                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem; font-family: 'Cormorant Garamond', serif;">Our Mission</h3>
+                    <p style="line-height: 1.8; opacity: 0.95;">To design spaces that look good, work well and suit the people who use them every day.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--foreground); padding: 3rem; border-radius: 2rem; box-shadow: 0 20px 60px rgba(88, 143, 119, 0.2);">
+                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem; font-family: 'Cormorant Garamond', serif;">Our Vision</h3>
+                    <p style="line-height: 1.8;">To be the studio people in Hyderabad call first when they want their home or workplace done properly, and the one they recommend to friends afterwards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Our Foundations -->
+    <section style="background: linear-gradient(135deg, rgba(2, 80, 112, 0.03) 0%, rgba(88, 143, 119, 0.03) 100%);">
+        <div class="section-header">
+            <h2>Our <span class="highlight">Foundations</span></h2>
+            <p>What we hold on to in every project</p>
+        </div>
+        
+        <div class="trust-grid">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Passion</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>We design for how a space will feel in ten years, not only on the day it is finished.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Empathy</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Homes shaped around your life, not the other way around.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Craft</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Good materials, good light and careful work on site.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Innovation</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>We keep learning new materials, methods and tools, and use them where they help.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Founder Section -->
+    <section style="background: linear-gradient(135deg, rgba(41, 124, 146, 0.05) 0%, rgba(2, 80, 112, 0.05) 100%);">
+        <div class="section-header">
+            <h2>Meet <span class="highlight">Chintan K Parikh</span></h2>
+            <p>Founder and principal designer</p>
+        </div>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="background: rgba(255, 255, 255, 0.9); padding: 3rem; border-radius: 2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); text-align: center;">
+                <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--peacock) 0%, var(--gold) 100%); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700; font-family: 'Cinzel', serif;">CP</div>
+                
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--peacock); font-family: 'Cormorant Garamond', serif;">Founder & Principal Interior Designer</h3>
+                
+                <p style="font-size: 1.15rem; line-height: 2; color: var(--foreground); margin-bottom: 1.6rem;">
+                    Chintan K Parikh started KCP Interia in 2008 and has led the design of every project since. The idea was simple: make spaces that people enjoy living and working in.
+                </p>
+                
+                <p style="font-size: 1.08rem; line-height: 1.95; color: var(--accent);">
+                    He pays close attention to detail, from the choice of materials to the finish in every corner, and keeps clients involved in every decision. A space should be practical for daily life and still feel special to come home to.
+                </p>
+
+                <p style="font-size: 1.05rem; line-height: 1.95; color: var(--muted);">
+                     None of this happens alone. KCP Interia is a close team of designers and craftsmen who work side by side, look out for one another, and care about every home as if it were their own. Every project is planned, built and finished together, and together we have completed more than 300 projects, including family homes, plug and play corporate offices, jewellery showrooms and commercial spaces.
+                </p>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer (same on every page) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><img src="images/signature.png" alt="" style="height: 3rem; width: 3rem; border-radius: 0.6rem; display: block; margin-bottom: 0.75rem;">KCP Interia</h4>
+                <p>Interior design studio in Hyderabad. Designing and building homes, offices and commercial spaces since 2008.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="work.html">Our Work</a>
+                <a href="services.html">Services</a>
+                <a href="services.html#process">Our Process</a>
+                <a href="index.html#testimonials">Testimonials</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>What We Do</h4>
+                <a href="services.html">Residential Design</a>
+                <a href="services.html">Hospitality Design</a>
+                <a href="services.html">Office Interiors</a>
+                <a href="services.html">Commercial Spaces</a>
+                <a href="services.html">Renovation Projects</a>
+            </div>
+            <div class="footer-section">
+                <h4>Get In Touch</h4>
+                <p>kcpinteria@gmail.com</p>
+                <p>+91 98490 77702</p>
+                <p>+91 81210 77702</p>
+                <p>1-1-36/3, RTC X Road<br>
+                   Jawahar Nagar, Kavadiguda<br>
+                   Hyderabad 500 020</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 KCP Interia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919849077702?text=Hello KCP Interia team, I am interested in your interior design services" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Chat on WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"></path></svg>
+    </a>
+
+    <script src="assets/js/site.js"></script>
+</body>
+</html>
