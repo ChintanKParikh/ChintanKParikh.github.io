@@ -41,4 +41,4 @@ Videos/                  walkthrough videos
 ## Contact
 
 KCP Interia · 1-1-36/3, RTC X Road, Jawahar Nagar, Kavadiguda, Hyderabad 500 020
-+91 98490 77702 · +91 81210 77702 · kcpinteria@gmail.com
++91 98490 77702 · kcpinteria@gmail.com
