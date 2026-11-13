@@ -1,6 +1,6 @@
 # KCP Interia
 
-**Live website: https://chintankparikh.github.io**
+**Live website: https://kcpinteria.com**
 
 KCP Interia is an interior design studio in Hyderabad, started by Chintan K Parikh in 2008. The team designs and builds homes, villas, hotels, offices and showrooms, and has completed more than 300 projects.
 
