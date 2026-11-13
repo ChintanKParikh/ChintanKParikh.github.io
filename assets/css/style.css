@@ -1176,3 +1176,77 @@ html.kcp-arrive-doors .kcp-half { opacity: 1; }
     .kcp-gallery { gap: 0.6rem; }
     .kcp-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
 }
+
+/* =========================================================
+   Our card (Contact page)
+   The animated house shaped card, Save contact, Download card
+   and the list of spaces we design.
+   ========================================================= */
+#our-card { background: #ffffff; }
+.kcp-card-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 420px minmax(0, 1fr);
+    gap: 3.5rem;
+    align-items: start;
+}
+.kcp-cardbox { width: min(400px, 100%); aspect-ratio: 4 / 5; position: relative; margin: 0 auto; }
+.kcp-cardstage { position: absolute; left: 0; top: 0; width: 400px; height: 500px; transform-origin: 0 0; transform: scale(var(--kcs, 1)); }
+.kcp-cardstage:not(.kr-play) * { animation: none !important; }
+.kcp-card-side h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--peacock); margin-bottom: 0.6rem; }
+.kcp-card-side > p { color: var(--muted); line-height: 1.8; margin-bottom: 1.4rem; }
+.kcp-card-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.kcp-card-actions .btn { display: inline-flex; align-items: center; gap: 0.5rem; }
+.kcp-card-links { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 0.95rem; }
+.kcp-card-links a, .kcp-card-links button {
+    color: var(--peacock-light); background: none; border: none; padding: 0.4rem 0; font: inherit; cursor: pointer;
+    text-decoration: underline; text-underline-offset: 4px; min-height: 44px;
+}
+.kcp-card-note { margin-top: 0.4rem; font-size: 0.9rem; color: var(--muted); }
+.kcp-spaces { margin-top: 2.2rem; }
+.kcp-spaces h4 {
+    font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--peacock-light); margin: 1.6rem 0 0.4rem;
+}
+.kcp-spaces h5 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--peacock); margin: 0.9rem 0 0.5rem; }
+.kcp-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 0; }
+.kcp-chips li {
+    font-size: 0.86rem; color: var(--peacock); background: var(--ivory);
+    border: 1px solid var(--gold-light); border-radius: 999px; padding: 0.38rem 0.85rem;
+}
+
+/* House card */
+.hc-foil { -webkit-mask: url(../../images/card/kcp-card-mask.png) center/contain no-repeat; mask: url(../../images/card/kcp-card-mask.png) center/contain no-repeat;
+    background: linear-gradient(118deg,#7a5a22 0%,#c9a24e 16%,#f7e7b0 28%,#d4ae5a 38%,#8f6c2b 52%,#e8cd84 66%,#fff3c9 76%,#b48a3c 88%,#7a5a22 100%); background-size: 220% 100%; animation: hcSheen 6s ease-in-out infinite alternate; }
+.hc-goldtext { background: linear-gradient(118deg,#7a5a22 0%,#c9a24e 16%,#f7e7b0 28%,#d4ae5a 38%,#8f6c2b 52%,#e8cd84 66%,#fff3c9 76%,#b48a3c 88%,#7a5a22 100%); background-size: 220% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent; animation: hcSheen 6s ease-in-out infinite alternate; }
+.hc-raise { filter: drop-shadow(0 1.5px 1px rgba(0,0,0,.5)) drop-shadow(0 -0.5px 0 rgba(255,255,255,.3)); }
+@keyframes hcSheen { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+
+/* One room, many lives */
+.kr-panel{clip-path:polygon(50% 0,100% 0,100% 100%,0 100%,0 0);animation:krMorph .7s 9.3s cubic-bezier(.4,0,.2,1) forwards}
+.kr-line{stroke-dasharray:1;stroke-dashoffset:1;animation:krDraw .9s .15s ease-out forwards}
+.kr-set{opacity:0;animation:krSet 1.15s ease-in-out forwards}
+.kr-inset{opacity:0;animation:krFade .4s 1.1s forwards}
+.kr-room{animation:krOut .45s 9.25s ease-in forwards}
+.kr-cap{position:absolute;left:0;right:0;top:0;text-align:center;font-family:Jost,'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#FBF6EC;opacity:0;animation:krSet 1.15s ease-in-out forwards}
+.kr-card{opacity:0;transform:translateY(18px) scale(.97);animation:krIn .8s 9.65s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes krDraw{to{stroke-dashoffset:0}}
+@keyframes krSet{0%{opacity:0;transform:translateY(6px)}16%,84%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes krFade{to{opacity:1}}
+@keyframes krOut{to{opacity:0}}
+@keyframes krIn{to{opacity:1;transform:none}}
+@keyframes krMorph{to{clip-path:polygon(50% 0,100% 27%,100% 100%,0 100%,0 27%)}}
+
+@media (prefers-reduced-motion: reduce) {
+    .kcp-cardstage * { animation: none !important; }
+    .kr-room { opacity: 0; }
+    .kr-panel { clip-path: polygon(50% 0,100% 27%,100% 100%,0 100%,0 27%); }
+    .kr-card { opacity: 1; transform: none; }
+}
+@media (max-width: 900px) {
+    .kcp-card-grid { grid-template-columns: minmax(0, 1fr); gap: 2.25rem; }
+    .kcp-card-side { text-align: center; }
+    .kcp-card-actions, .kcp-card-links, .kcp-chips { justify-content: center; }
+}

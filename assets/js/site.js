@@ -260,3 +260,23 @@
     });
   }
 })();
+
+/* Our card (Contact page): plays the card animation once it scrolls into view,
+   keeps the 400 x 500 card scaled to fit small screens, and replays on request. */
+(function () {
+  var stage = document.getElementById('kcpCardStage');
+  if (!stage) return;
+  var box = stage.parentNode;
+  function fit() { box.style.setProperty('--kcs', Math.min(1, box.clientWidth / 400)); }
+  fit();
+  window.addEventListener('resize', fit);
+  function play() { stage.classList.remove('kr-play'); void stage.offsetWidth; stage.classList.add('kr-play'); }
+  if ('IntersectionObserver' in window) {
+    var seen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { play(); seen.disconnect(); } });
+    }, { threshold: 0.35 });
+    seen.observe(stage);
+  } else { play(); }
+  var again = document.getElementById('kcpCardReplay');
+  if (again) again.addEventListener('click', play);
+})();
